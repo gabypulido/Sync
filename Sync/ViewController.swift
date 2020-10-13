@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  Sync
 //
-//  Created by Gabriela Pulido on 10/13/20.
-//  Copyright © 2020 Gabriela Pulido. All rights reserved.
+//  Created by Group 10 on 10/13/20.
+//  Copyright © 2020 Group 10. All rights reserved.
 //
 
 import UIKit
