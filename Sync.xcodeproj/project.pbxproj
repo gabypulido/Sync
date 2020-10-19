@@ -13,6 +13,7 @@
 		019AE009253602740072E2E0 /* Sync.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 019AE007253602740072E2E0 /* Sync.xcdatamodeld */; };
 		019AE00B253602740072E2E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019AE00A253602740072E2E0 /* Assets.xcassets */; };
 		019AE00E253602740072E2E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019AE00C253602740072E2E0 /* LaunchScreen.storyboard */; };
+		01E092EB253E0EF300C86A29 /* NotificationHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E092EA253E0EF200C86A29 /* NotificationHubViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		019AE00A253602740072E2E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		019AE00D253602740072E2E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		019AE00F253602740072E2E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01E092EA253E0EF200C86A29 /* NotificationHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHubViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				019AE000253602740072E2E0 /* AppDelegate.swift */,
 				019AE002253602740072E2E0 /* ViewController.swift */,
 				019AE004253602740072E2E0 /* Main.storyboard */,
+				01E092EA253E0EF200C86A29 /* NotificationHubViewController.swift */,
 				019AE00A253602740072E2E0 /* Assets.xcassets */,
 				019AE00C253602740072E2E0 /* LaunchScreen.storyboard */,
 				019AE00F253602740072E2E0 /* Info.plist */,
@@ -142,6 +145,7 @@
 				019AE009253602740072E2E0 /* Sync.xcdatamodeld in Sources */,
 				019AE003253602740072E2E0 /* ViewController.swift in Sources */,
 				019AE001253602740072E2E0 /* AppDelegate.swift in Sources */,
+				01E092EB253E0EF300C86A29 /* NotificationHubViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
