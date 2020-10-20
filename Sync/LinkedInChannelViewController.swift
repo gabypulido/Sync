@@ -1,5 +1,5 @@
 //
-//  TwitterChannelViewController.swift
+//  LinkedInChannelViewController.swift
 //  Sync
 //
 //  Created by Gabriela Pulido on 10/20/20.
@@ -8,9 +8,8 @@
 
 import UIKit
 
-class TwitterChannelViewController: UIViewController {
+class LinkedInChannelViewController: UIViewController {
 
-    var delegate: UIViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
 

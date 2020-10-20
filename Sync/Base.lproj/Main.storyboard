@@ -79,7 +79,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="socialMediaNameLabel" destination="Jlc-eF-3AO" id="Jyz-yO-lEr"/>
-                                            <segue destination="Xwd-ac-4Op" kind="show" identifier="TwitterChannelSegue" id="V3f-aH-BZ8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -93,52 +92,86 @@
                     </navigationItem>
                     <connections>
                         <outlet property="notificationHubTable" destination="yBH-gc-Bcq" id="6RN-XQ-KoR"/>
+                        <segue destination="Xwd-ac-4Op" kind="show" identifier="TwitterChannelSegue" id="wnT-AK-tHQ"/>
+                        <segue destination="YSp-JY-Q8L" kind="show" identifier="MessengerChannelSegue" id="CfS-1R-tD6"/>
+                        <segue destination="iNZ-an-HCL" kind="show" identifier="LinkedInChannelSegue" id="YLk-Zw-mze"/>
+                        <segue destination="Yvf-ij-IQh" kind="show" identifier="FacebookChannelSegue" id="752-60-sSc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="svz-Ai-yQ3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2356.521739130435" y="-944.19642857142856"/>
+            <point key="canvasLocation" x="2341" y="-1009"/>
         </scene>
-        <!--View Controller-->
+        <!--Messenger Channel View Controller-->
         <scene sceneID="EBQ-gN-z3y">
             <objects>
-                <viewController id="YSp-JY-Q8L" sceneMemberID="viewController">
+                <viewController id="YSp-JY-Q8L" customClass="MessengerChannelViewController" customModule="Sync" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="45P-QI-3sj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="messenger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtT-GI-z6M">
+                                <rect key="frame" x="124" y="346" width="171" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="1d1-kl-ri9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="f7I-CZ-9cW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bVK-qA-mv5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3308" y="-983"/>
+            <point key="canvasLocation" x="3307.2463768115945" y="-983.03571428571422"/>
         </scene>
-        <!--View Controller-->
+        <!--Linked In Channel View Controller-->
         <scene sceneID="lav-ro-GiZ">
             <objects>
-                <viewController id="iNZ-an-HCL" sceneMemberID="viewController">
+                <viewController id="iNZ-an-HCL" customClass="LinkedInChannelViewController" customModule="Sync" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pK8-1r-ecx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="linked in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1h-KJ-95p">
+                                <rect key="frame" x="142" y="381" width="139" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="nsy-Br-SbY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="gFZ-SM-ro2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTk-9e-aPP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3309" y="-278"/>
+            <point key="canvasLocation" x="3308.6956521739135" y="-278.57142857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Facebook Channel View Controller-->
         <scene sceneID="uxO-1d-JBx">
             <objects>
-                <viewController id="Yvf-ij-IQh" sceneMemberID="viewController">
+                <viewController id="Yvf-ij-IQh" customClass="FacebookChannelViewController" customModule="Sync" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ua4-qJ-v6a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="fb" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cc0-On-VL6">
+                                <rect key="frame" x="169" y="271" width="16" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Cxr-0i-Fms"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="B2p-Bm-kjy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9x-Ce-0ZK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
