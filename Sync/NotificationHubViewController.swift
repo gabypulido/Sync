@@ -8,6 +8,11 @@
 
 import UIKit
 
+class SocialMediaTableViewCell: UITableViewCell {
+    @IBOutlet weak var socialMediaNameLabel: UILabel!
+    
+}
+
 class NotificationHubViewController: UIViewController {
     
     var socialMedia: [String] = ["Twitter", "Messenger", "LinkedIn", "Facebook", ]
@@ -26,9 +31,11 @@ class NotificationHubViewController: UIViewController {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! SocialMediaTableViewCell
         let row = indexPath.row
         let socialMediaNetwork = socialMedia[row]
+        print(socialMediaNetwork)
+        cell.socialMediaNameLabel.text = socialMediaNetwork
 
         return cell
     }

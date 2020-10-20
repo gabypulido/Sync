@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		013C22D9253F3D0700B86C3D /* Sync.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 013C22D7253F3D0700B86C3D /* Sync.xcdatamodeld */; };
+		013C22EE253F479400B86C3D /* TwitterChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C22ED253F479400B86C3D /* TwitterChannelViewController.swift */; };
 		019AE001253602740072E2E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019AE000253602740072E2E0 /* AppDelegate.swift */; };
 		019AE003253602740072E2E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019AE002253602740072E2E0 /* ViewController.swift */; };
 		019AE006253602740072E2E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019AE004253602740072E2E0 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		013C22D8253F3D0700B86C3D /* Sync.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sync.xcdatamodel; sourceTree = "<group>"; };
+		013C22ED253F479400B86C3D /* TwitterChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterChannelViewController.swift; sourceTree = "<group>"; };
 		019ADFFD253602740072E2E0 /* Sync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		019AE000253602740072E2E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		019AE002253602740072E2E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				019AE00F253602740072E2E0 /* Info.plist */,
 				019AE007253602740072E2E0 /* Sync.xcdatamodeld */,
 				013C22D7253F3D0700B86C3D /* Sync.xcdatamodeld */,
+				013C22ED253F479400B86C3D /* TwitterChannelViewController.swift */,
 			);
 			path = Sync;
 			sourceTree = "<group>";
@@ -94,7 +97,6 @@
 				4F63892D5690C7BFF35B2DEF /* Pods-Sync.debug.xcconfig */,
 				88D7D315DEF95294DE3445CA /* Pods-Sync.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -229,6 +231,7 @@
 				019AE003253602740072E2E0 /* ViewController.swift in Sources */,
 				013C22D9253F3D0700B86C3D /* Sync.xcdatamodeld in Sources */,
 				019AE001253602740072E2E0 /* AppDelegate.swift in Sources */,
+				013C22EE253F479400B86C3D /* TwitterChannelViewController.swift in Sources */,
 				01E092EB253E0EF300C86A29 /* NotificationHubViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
