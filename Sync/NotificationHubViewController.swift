@@ -13,10 +13,15 @@ class SocialMediaTableViewCell: UITableViewCell {
     
 }
 
-class NotificationHubViewController: UIViewController {
+class NotificationHubViewController: UIViewController, UITableViewDataSource {
     
     var socialMedia: [String] = ["Twitter", "Messenger", "LinkedIn", "Facebook", ]
-    @IBOutlet weak var notificationHubTable: UITableView!
+    @IBOutlet weak var notificationHubTable: UITableView!{
+        didSet {
+                notificationHubTable.dataSource = self
+            }
+    }
+
     
     
     override func viewDidLoad() {
@@ -32,6 +37,7 @@ class NotificationHubViewController: UIViewController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! SocialMediaTableViewCell
+        cell.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
         let row = indexPath.row
         let socialMediaNetwork = socialMedia[row]
         print(socialMediaNetwork)
