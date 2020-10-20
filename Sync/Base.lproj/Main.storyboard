@@ -102,7 +102,7 @@
             </objects>
             <point key="canvasLocation" x="2341" y="-1009"/>
         </scene>
-        <!--Messenger Channel View Controller-->
+        <!--Messenger-->
         <scene sceneID="EBQ-gN-z3y">
             <objects>
                 <viewController id="YSp-JY-Q8L" customClass="MessengerChannelViewController" customModule="Sync" customModuleProvider="target" sceneMemberID="viewController">
@@ -117,17 +117,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QTO-3S-AV4">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1d1-kl-ri9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="f7I-CZ-9cW"/>
+                    <navigationItem key="navigationItem" title="Messenger" id="f7I-CZ-9cW"/>
+                    <connections>
+                        <outlet property="messengerNotificationTable" destination="QTO-3S-AV4" id="1yZ-7J-jlF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bVK-qA-mv5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3307.2463768115945" y="-983.03571428571422"/>
         </scene>
-        <!--Linked In Channel View Controller-->
+        <!--LinkedIn-->
         <scene sceneID="lav-ro-GiZ">
             <objects>
                 <viewController id="iNZ-an-HCL" customClass="LinkedInChannelViewController" customModule="Sync" customModuleProvider="target" sceneMemberID="viewController">
@@ -142,17 +150,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0dQ-ax-gNA">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nsy-Br-SbY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gFZ-SM-ro2"/>
+                    <navigationItem key="navigationItem" title="LinkedIn" id="gFZ-SM-ro2"/>
+                    <connections>
+                        <outlet property="linkedInNotificationTable" destination="0dQ-ax-gNA" id="8jU-21-VeM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTk-9e-aPP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3308.6956521739135" y="-278.57142857142856"/>
         </scene>
-        <!--Facebook Channel View Controller-->
+        <!--Facebook-->
         <scene sceneID="uxO-1d-JBx">
             <objects>
                 <viewController id="Yvf-ij-IQh" customClass="FacebookChannelViewController" customModule="Sync" customModuleProvider="target" sceneMemberID="viewController">
@@ -167,17 +183,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="POe-Lu-OjE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Cxr-0i-Fms"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="B2p-Bm-kjy"/>
+                    <navigationItem key="navigationItem" title="Facebook" id="B2p-Bm-kjy"/>
+                    <connections>
+                        <outlet property="facebookNotificationTable" destination="POe-Lu-OjE" id="RLN-lM-QZy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9x-Ce-0ZK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3309" y="449"/>
         </scene>
-        <!--Twitter Channel View Controller-->
+        <!--Twitter-->
         <scene sceneID="8Iq-HY-cMN">
             <objects>
                 <viewController id="Xwd-ac-4Op" customClass="TwitterChannelViewController" customModule="Sync" customModuleProvider="target" sceneMemberID="viewController">
@@ -192,11 +216,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RiY-eV-RwP">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="K4B-lD-iAm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="205-59-VUi"/>
+                    <navigationItem key="navigationItem" title="Twitter" id="205-59-VUi"/>
+                    <connections>
+                        <outlet property="twitterNotificationTable" destination="RiY-eV-RwP" id="9Ls-pe-Zx1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f3i-rs-Ceb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

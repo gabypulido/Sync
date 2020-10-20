@@ -9,10 +9,11 @@
 import UIKit
 
 class FacebookChannelViewController: UIViewController {
-
+    @IBOutlet weak var facebookNotificationTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        facebookNotificationTable.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
         // Do any additional setup after loading the view.
     }
     
