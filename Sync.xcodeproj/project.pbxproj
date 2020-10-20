@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		013C22D9253F3D0700B86C3D /* Sync.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 013C22D7253F3D0700B86C3D /* Sync.xcdatamodeld */; };
 		019AE001253602740072E2E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019AE000253602740072E2E0 /* AppDelegate.swift */; };
 		019AE003253602740072E2E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019AE002253602740072E2E0 /* ViewController.swift */; };
 		019AE006253602740072E2E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019AE004253602740072E2E0 /* Main.storyboard */; };
@@ -14,9 +15,11 @@
 		019AE00B253602740072E2E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019AE00A253602740072E2E0 /* Assets.xcassets */; };
 		019AE00E253602740072E2E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019AE00C253602740072E2E0 /* LaunchScreen.storyboard */; };
 		01E092EB253E0EF300C86A29 /* NotificationHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E092EA253E0EF200C86A29 /* NotificationHubViewController.swift */; };
+		52BF09C32161593C1071379D /* Pods_Sync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB4359ECA7F4CFFE39BA91C /* Pods_Sync.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		013C22D8253F3D0700B86C3D /* Sync.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sync.xcdatamodel; sourceTree = "<group>"; };
 		019ADFFD253602740072E2E0 /* Sync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		019AE000253602740072E2E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		019AE002253602740072E2E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +29,9 @@
 		019AE00D253602740072E2E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		019AE00F253602740072E2E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01E092EA253E0EF200C86A29 /* NotificationHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHubViewController.swift; sourceTree = "<group>"; };
+		4F63892D5690C7BFF35B2DEF /* Pods-Sync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync.debug.xcconfig"; path = "Target Support Files/Pods-Sync/Pods-Sync.debug.xcconfig"; sourceTree = "<group>"; };
+		88D7D315DEF95294DE3445CA /* Pods-Sync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync.release.xcconfig"; path = "Target Support Files/Pods-Sync/Pods-Sync.release.xcconfig"; sourceTree = "<group>"; };
+		CDB4359ECA7F4CFFE39BA91C /* Pods_Sync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52BF09C32161593C1071379D /* Pods_Sync.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +51,8 @@
 			children = (
 				019ADFFF253602740072E2E0 /* Sync */,
 				019ADFFE253602740072E2E0 /* Products */,
+				A8A014D1C50519CDC4C6F429 /* Pods */,
+				080743EAF557B495BF690010 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,8 +75,27 @@
 				019AE00C253602740072E2E0 /* LaunchScreen.storyboard */,
 				019AE00F253602740072E2E0 /* Info.plist */,
 				019AE007253602740072E2E0 /* Sync.xcdatamodeld */,
+				013C22D7253F3D0700B86C3D /* Sync.xcdatamodeld */,
 			);
 			path = Sync;
+			sourceTree = "<group>";
+		};
+		080743EAF557B495BF690010 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDB4359ECA7F4CFFE39BA91C /* Pods_Sync.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A8A014D1C50519CDC4C6F429 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F63892D5690C7BFF35B2DEF /* Pods-Sync.debug.xcconfig */,
+				88D7D315DEF95294DE3445CA /* Pods-Sync.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 019AE012253602740072E2E0 /* Build configuration list for PBXNativeTarget "Sync" */;
 			buildPhases = (
+				2F8DE76FBA150B40E379937F /* [CP] Check Pods Manifest.lock */,
 				019ADFF9253602740072E2E0 /* Sources */,
 				019ADFFA253602740072E2E0 /* Frameworks */,
 				019ADFFB253602740072E2E0 /* Resources */,
+				B51EEF962A62B54795260630 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -137,6 +167,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2F8DE76FBA150B40E379937F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sync-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B51EEF962A62B54795260630 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sync/Pods-Sync-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sync/Pods-Sync-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		019ADFF9253602740072E2E0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -144,6 +227,7 @@
 			files = (
 				019AE009253602740072E2E0 /* Sync.xcdatamodeld in Sources */,
 				019AE003253602740072E2E0 /* ViewController.swift in Sources */,
+				013C22D9253F3D0700B86C3D /* Sync.xcdatamodeld in Sources */,
 				019AE001253602740072E2E0 /* AppDelegate.swift in Sources */,
 				01E092EB253E0EF300C86A29 /* NotificationHubViewController.swift in Sources */,
 			);
@@ -280,6 +364,7 @@
 		};
 		019AE013253602740072E2E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F63892D5690C7BFF35B2DEF /* Pods-Sync.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -295,6 +380,7 @@
 		};
 		019AE014253602740072E2E0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88D7D315DEF95294DE3445CA /* Pods-Sync.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -332,6 +418,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		013C22D7253F3D0700B86C3D /* Sync.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				013C22D8253F3D0700B86C3D /* Sync.xcdatamodel */,
+			);
+			currentVersion = 013C22D8253F3D0700B86C3D /* Sync.xcdatamodel */;
+			path = Sync.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		019AE007253602740072E2E0 /* Sync.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
