@@ -20,6 +20,7 @@
 		019AE00E253602740072E2E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019AE00C253602740072E2E0 /* LaunchScreen.storyboard */; };
 		01E092EB253E0EF300C86A29 /* NotificationHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E092EA253E0EF200C86A29 /* NotificationHubViewController.swift */; };
 		52BF09C32161593C1071379D /* Pods_Sync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB4359ECA7F4CFFE39BA91C /* Pods_Sync.framework */; };
+		5CE90EC42540D0C0008E1A9C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE90EC32540D0C0008E1A9C /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		019AE00F253602740072E2E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01E092EA253E0EF200C86A29 /* NotificationHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHubViewController.swift; sourceTree = "<group>"; };
 		4F63892D5690C7BFF35B2DEF /* Pods-Sync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync.debug.xcconfig"; path = "Target Support Files/Pods-Sync/Pods-Sync.debug.xcconfig"; sourceTree = "<group>"; };
+		5CE90EC32540D0C0008E1A9C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		88D7D315DEF95294DE3445CA /* Pods-Sync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync.release.xcconfig"; path = "Target Support Files/Pods-Sync/Pods-Sync.release.xcconfig"; sourceTree = "<group>"; };
 		CDB4359ECA7F4CFFE39BA91C /* Pods_Sync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				019AE000253602740072E2E0 /* AppDelegate.swift */,
+				5CE90EC32540D0C0008E1A9C /* SignUpViewController.swift */,
 				019AE002253602740072E2E0 /* ViewController.swift */,
 				019AE004253602740072E2E0 /* Main.storyboard */,
 				01E092EA253E0EF200C86A29 /* NotificationHubViewController.swift */,
@@ -240,6 +243,7 @@
 				019AE003253602740072E2E0 /* ViewController.swift in Sources */,
 				013C22D9253F3D0700B86C3D /* Sync.xcdatamodeld in Sources */,
 				019AE001253602740072E2E0 /* AppDelegate.swift in Sources */,
+				5CE90EC42540D0C0008E1A9C /* SignUpViewController.swift in Sources */,
 				011FDA3C253F643A00EBAA44 /* LinkedInChannelViewController.swift in Sources */,
 				011FDA3F253F645400EBAA44 /* FacebookChannelViewController.swift in Sources */,
 				013C22EE253F479400B86C3D /* TwitterChannelViewController.swift in Sources */,
