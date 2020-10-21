@@ -39,7 +39,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SUZ-mD-uLb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1490" y="-944"/>
+            <point key="canvasLocation" x="901" y="-599"/>
         </scene>
         <!--Channels-->
         <scene sceneID="sYL-LD-rcp">
@@ -88,6 +88,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Channels" id="uQF-jd-MN3">
+                        <barButtonItem key="backBarButtonItem" title=" " id="xjb-fa-aHB"/>
                         <barButtonItem key="leftBarButtonItem" title="Item" image="icons8-menu-50" id="gte-FL-den"/>
                     </navigationItem>
                     <connections>
@@ -100,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="svz-Ai-yQ3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2341" y="-1009"/>
+            <point key="canvasLocation" x="1829" y="-599"/>
         </scene>
         <!--Messenger-->
         <scene sceneID="EBQ-gN-z3y">
@@ -133,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bVK-qA-mv5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3307.2463768115945" y="-983.03571428571422"/>
+            <point key="canvasLocation" x="4307" y="-1078"/>
         </scene>
         <!--LinkedIn-->
         <scene sceneID="lav-ro-GiZ">
@@ -166,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTk-9e-aPP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3308.6956521739135" y="-278.57142857142856"/>
+            <point key="canvasLocation" x="4307" y="-330"/>
         </scene>
         <!--Facebook-->
         <scene sceneID="uxO-1d-JBx">
@@ -199,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9x-Ce-0ZK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3309" y="449"/>
+            <point key="canvasLocation" x="3199" y="222"/>
         </scene>
         <!--Twitter-->
         <scene sceneID="8Iq-HY-cMN">
@@ -232,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f3i-rs-Ceb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3308.6956521739135" y="-1670.0892857142856"/>
+            <point key="canvasLocation" x="3199" y="-1456"/>
         </scene>
     </scenes>
     <resources>

@@ -41,13 +41,13 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         cell.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
         let row = indexPath.row
         let socialMediaNetwork = socialMedia[row]
-
         cell.socialMediaNameLabel.text = socialMediaNetwork
 
         return cell
     }
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        tableView.deselectRow(at: indexPath, animated: true)
         switch socialMedia[indexPath.row] {
             case "Twitter":
                 self.performSegue(withIdentifier: "TwitterChannelSegue", sender: self)
