@@ -23,7 +23,7 @@ class SocialMediaTableViewCell: UITableViewCell {
     
 }
 
-class NotificationHubViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class NotificationHubViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITableViewDragDelegate {
     
     var socialMedia: [String] = ["Twitter", "Messenger", "LinkedIn", "Facebook", ]
     var twitterNotifications = [Notification(body: "Twitter Test", time: "time")]
@@ -35,19 +35,19 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
     
     @IBOutlet weak var notificationHubTable: UITableView!{
         didSet {
-                notificationHubTable.dataSource = self
-                notificationHubTable.delegate = self
-            }
+            notificationHubTable.dataSource = self
+            notificationHubTable.delegate = self
+            notificationHubTable.dragDelegate = self
+            notificationHubTable.dragInteractionEnabled = true
+        }
     }
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         //tableCell.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
         // Do any additional setup after loading the view.
         sections = [Category(name: "Twitter", items: twitterNotifications), Category(name: "Messenger", items: messengerNotifications), Category(name: "LinkedIn", items: linkedInNotifications), Category(name: "Facebook", items: facebookNotifications)]
-        notificationHubTable.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
+        notificationHubTable.backgroundColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
         }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -97,6 +97,19 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         view.tintColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = UIColor(hue: 0.125, saturation: 0.11, brightness: 0.98, alpha: 1.0)
+    }
+    
+    //TODO: Figure out drag and drop 
+    func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        let dragItem = UIDragItem(itemProvider: NSItemProvider())
+        dragItem.localObject = self.sections[indexPath.section]
+        return [ dragItem ]
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        // Update the model
+        let mover = self.sections.remove(at: sourceIndexPath.section)
+        self.sections.insert(mover, at: destinationIndexPath.section)
     }
 
 
