@@ -89,7 +89,7 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         case "Twitter":
                 self.performSegue(withIdentifier: "TwitterChannelSegue", sender: self)
         case "Instagram":
-            self.performSegue(withIdentifier: "MessengerChannelSegue", sender: self)
+            self.performSegue(withIdentifier: "InstagramChannelSegue", sender: self)
         case "LinkedIn":
             self.performSegue(withIdentifier: "LinkedInChannelSegue", sender: self)
         case "Facebook":

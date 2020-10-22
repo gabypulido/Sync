@@ -8,9 +8,25 @@
 
 import UIKit
 
-class TwitterChannelViewController: UIViewController {
+class TwitterChannelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //change to number of notifs
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell") as! UITableViewCell
+        cell.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
+        return cell
+    }
+    
 
-    @IBOutlet weak var twitterNotificationTable: UITableView!
+    @IBOutlet weak var twitterNotificationTable: UITableView!{
+        didSet {
+            twitterNotificationTable.dataSource = self
+            twitterNotificationTable.delegate = self
+        }
+    }
     
     var delegate: UIViewController!
     
