@@ -24,6 +24,10 @@
 		5CE90ECB2541085D008E1A9C /* OptInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE90ECA2541085D008E1A9C /* OptInViewController.swift */; };
 		5CE90ECE254109F2008E1A9C /* 120620519_777256209718165_3142639425989673168_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5CE90ECD254109F2008E1A9C /* 120620519_777256209718165_3142639425989673168_n.jpg */; };
 		5CE90EE625411E80008E1A9C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CE90EE525411E80008E1A9C /* GoogleService-Info.plist */; };
+		5CE90F0425412FC2008E1A9C /* instagram-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CE90F0325412FC1008E1A9C /* instagram-64.png */; };
+		5CE90F0725412FF9008E1A9C /* twitter-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CE90F0625412FF9008E1A9C /* twitter-64.png */; };
+		5CE90F0A25412FFD008E1A9C /* facebook-3-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CE90F0925412FFD008E1A9C /* facebook-3-64.png */; };
+		5CE90F0D25413008008E1A9C /* linkedin-3-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CE90F0C25413008008E1A9C /* linkedin-3-64.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		5CE90ECA2541085D008E1A9C /* OptInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptInViewController.swift; sourceTree = "<group>"; };
 		5CE90ECD254109F2008E1A9C /* 120620519_777256209718165_3142639425989673168_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 120620519_777256209718165_3142639425989673168_n.jpg; sourceTree = "<group>"; };
 		5CE90EE525411E80008E1A9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5CE90F0325412FC1008E1A9C /* instagram-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "instagram-64.png"; sourceTree = "<group>"; };
+		5CE90F0625412FF9008E1A9C /* twitter-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-64.png"; sourceTree = "<group>"; };
+		5CE90F0925412FFD008E1A9C /* facebook-3-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-3-64.png"; sourceTree = "<group>"; };
+		5CE90F0C25413008008E1A9C /* linkedin-3-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "linkedin-3-64.png"; sourceTree = "<group>"; };
 		88D7D315DEF95294DE3445CA /* Pods-Sync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync.release.xcconfig"; path = "Target Support Files/Pods-Sync/Pods-Sync.release.xcconfig"; sourceTree = "<group>"; };
 		CDB4359ECA7F4CFFE39BA91C /* Pods_Sync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -100,6 +108,10 @@
 				011FDA3B253F643A00EBAA44 /* LinkedInChannelViewController.swift */,
 				011FDA38253F63FC00EBAA44 /* MessengerChannelViewController.swift */,
 				013C22ED253F479400B86C3D /* TwitterChannelViewController.swift */,
+				5CE90F0325412FC1008E1A9C /* instagram-64.png */,
+				5CE90F0925412FFD008E1A9C /* facebook-3-64.png */,
+				5CE90F0C25413008008E1A9C /* linkedin-3-64.png */,
+				5CE90F0625412FF9008E1A9C /* twitter-64.png */,
 			);
 			path = Sync;
 			sourceTree = "<group>";
@@ -182,11 +194,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CE90F0425412FC2008E1A9C /* instagram-64.png in Resources */,
 				5CE90ECE254109F2008E1A9C /* 120620519_777256209718165_3142639425989673168_n.jpg in Resources */,
 				019AE00E253602740072E2E0 /* LaunchScreen.storyboard in Resources */,
 				5CE90EE625411E80008E1A9C /* GoogleService-Info.plist in Resources */,
 				019AE00B253602740072E2E0 /* Assets.xcassets in Resources */,
+				5CE90F0A25412FFD008E1A9C /* facebook-3-64.png in Resources */,
 				019AE006253602740072E2E0 /* Main.storyboard in Resources */,
+				5CE90F0725412FF9008E1A9C /* twitter-64.png in Resources */,
+				5CE90F0D25413008008E1A9C /* linkedin-3-64.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

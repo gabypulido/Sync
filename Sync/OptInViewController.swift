@@ -10,12 +10,27 @@ import UIKit
 
 class OptInViewController: UIViewController {
 
+    @IBOutlet weak var twitter: UIButton!
+    @IBOutlet weak var facebook: UIButton!
+    @IBOutlet weak var instagram: UIButton!
+    @IBOutlet weak var linkedin: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        twitter.layer.cornerRadius = 10
+        twitter.clipsToBounds = true
+        instagram.layer.cornerRadius = 10
+        instagram.clipsToBounds = true
+        facebook.layer.cornerRadius = 10
+        facebook.clipsToBounds = true
+        linkedin.layer.cornerRadius = 10
+        linkedin.clipsToBounds = true
+    }
 
     /*
     // MARK: - Navigation
