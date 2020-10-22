@@ -48,6 +48,7 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         // Do any additional setup after loading the view.
         sections = [Category(name: "Twitter", items: twitterNotifications), Category(name: "Messenger", items: messengerNotifications), Category(name: "LinkedIn", items: linkedInNotifications), Category(name: "Facebook", items: facebookNotifications)]
         notificationHubTable.backgroundColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
+        self.view.backgroundColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
         }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
