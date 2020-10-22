@@ -13,6 +13,13 @@ class TwitterChannelViewController: UIViewController, UITableViewDelegate, UITab
     var twitterNotifications: [Notification] = []
     var delegate: UIViewController!
     
+    @IBOutlet weak var twitterNotificationTable: UITableView!{
+        didSet {
+            twitterNotificationTable.dataSource = self
+            twitterNotificationTable.delegate = self
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return twitterNotifications.count
     }
@@ -24,29 +31,8 @@ class TwitterChannelViewController: UIViewController, UITableViewDelegate, UITab
         return cell
     }
     
-
-    @IBOutlet weak var twitterNotificationTable: UITableView!{
-        didSet {
-            twitterNotificationTable.dataSource = self
-            twitterNotificationTable.delegate = self
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         twitterNotificationTable.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
