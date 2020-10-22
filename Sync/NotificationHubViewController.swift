@@ -19,15 +19,16 @@ struct Notification {
 }
 
 class SocialMediaTableViewCell: UITableViewCell {
-    @IBOutlet weak var socialMediaNameLabel: UILabel!
+    @IBOutlet weak var socialIcon: UIImageView!
+    
     
 }
 
 class NotificationHubViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITableViewDragDelegate {
     
-    var socialMedia: [String] = ["Twitter", "Messenger", "LinkedIn", "Facebook", ]
+    var socialMedia: [String] = ["Twitter", "Instagram", "LinkedIn", "Facebook", ]
     var twitterNotifications = [Notification(body: "Twitter Test", time: "time")]
-    var messengerNotifications = [Notification(body: "Messenger Test", time: "time")]
+    var instagramNotifications = [Notification(body: "Instagram Test", time: "time")]
     var linkedInNotifications = [Notification(body: "LinkedIn Test", time: "time")]
     var facebookNotifications = [Notification(body: "Facebook Test", time: "time")]
     
@@ -46,7 +47,7 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         super.viewDidLoad()
         //tableCell.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
         // Do any additional setup after loading the view.
-        sections = [Category(name: "Twitter", items: twitterNotifications), Category(name: "Messenger", items: messengerNotifications), Category(name: "LinkedIn", items: linkedInNotifications), Category(name: "Facebook", items: facebookNotifications)]
+        sections = [Category(name: "Twitter", items: twitterNotifications), Category(name: "Instagram", items: instagramNotifications), Category(name: "LinkedIn", items: linkedInNotifications), Category(name: "Facebook", items: facebookNotifications)]
         notificationHubTable.backgroundColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
         self.view.backgroundColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
         }
@@ -65,8 +66,20 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
 //        return cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell") as! SocialMediaTableViewCell
         let items = self.sections[indexPath.section].items
-        //let item = items[indexPath.row]
         cell.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
+        switch sections[indexPath.section].name {
+            case "Twitter":
+                cell.socialIcon.image = UIImage(named: "twitter-64")
+            case "Instagram":
+                cell.socialIcon.image = UIImage(named: "instagram-64")
+            case "LinkedIn":
+                cell.socialIcon.image = UIImage(named: "linkedin-3-64")
+            case "Facebook":
+                cell.socialIcon.image = UIImage(named: "facebook-3-64")
+            default:
+                print("Error")
+        }
+        
         return cell
     }
     
@@ -75,7 +88,7 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         switch sections[indexPath.section].name {
         case "Twitter":
                 self.performSegue(withIdentifier: "TwitterChannelSegue", sender: self)
-        case "Messenger":
+        case "Instagram":
             self.performSegue(withIdentifier: "MessengerChannelSegue", sender: self)
         case "LinkedIn":
             self.performSegue(withIdentifier: "LinkedInChannelSegue", sender: self)
