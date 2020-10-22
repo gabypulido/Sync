@@ -8,8 +8,13 @@
 
 import UIKit
 
-class LinkedInChannelViewController: UIViewController {
-    @IBOutlet weak var linkedInNotificationTable: UITableView!
+class LinkedInChannelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var linkedInNotificationTable: UITableView!{
+        didSet {
+            linkedInNotificationTable.dataSource = self
+            linkedInNotificationTable.delegate = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +22,17 @@ class LinkedInChannelViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //change to number of notifs
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell") as! SocialMediaTableViewCell
+        cell.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
+        cell.socialIcon.image = UIImage(named: "linkedin-3-64")
+        return cell
+    }
 
     /*
     // MARK: - Navigation

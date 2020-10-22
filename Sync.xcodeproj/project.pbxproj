@@ -18,6 +18,7 @@
 		019AE009253602740072E2E0 /* Sync.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 019AE007253602740072E2E0 /* Sync.xcdatamodeld */; };
 		019AE00B253602740072E2E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019AE00A253602740072E2E0 /* Assets.xcassets */; };
 		019AE00E253602740072E2E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019AE00C253602740072E2E0 /* LaunchScreen.storyboard */; };
+		01D898632541FB6300CADF22 /* SocialMediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D898622541FB6300CADF22 /* SocialMediaTableViewCell.swift */; };
 		01E092EB253E0EF300C86A29 /* NotificationHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E092EA253E0EF200C86A29 /* NotificationHubViewController.swift */; };
 		52BF09C32161593C1071379D /* Pods_Sync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB4359ECA7F4CFFE39BA91C /* Pods_Sync.framework */; };
 		5CE90EC42540D0C0008E1A9C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE90EC32540D0C0008E1A9C /* SignUpViewController.swift */; };
@@ -40,6 +41,7 @@
 		019AE00A253602740072E2E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		019AE00D253602740072E2E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		019AE00F253602740072E2E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01D898622541FB6300CADF22 /* SocialMediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaTableViewCell.swift; sourceTree = "<group>"; };
 		01E092EA253E0EF200C86A29 /* NotificationHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHubViewController.swift; sourceTree = "<group>"; };
 		4F63892D5690C7BFF35B2DEF /* Pods-Sync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync.debug.xcconfig"; path = "Target Support Files/Pods-Sync/Pods-Sync.debug.xcconfig"; sourceTree = "<group>"; };
 		5CE90EC32540D0C0008E1A9C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				011FDA3B253F643A00EBAA44 /* LinkedInChannelViewController.swift */,
 				011FDA38253F63FC00EBAA44 /* MessengerChannelViewController.swift */,
 				013C22ED253F479400B86C3D /* TwitterChannelViewController.swift */,
+				01D898622541FB6300CADF22 /* SocialMediaTableViewCell.swift */,
 			);
 			path = Sync;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				019AE009253602740072E2E0 /* Sync.xcdatamodeld in Sources */,
+				01D898632541FB6300CADF22 /* SocialMediaTableViewCell.swift in Sources */,
 				019AE003253602740072E2E0 /* ViewController.swift in Sources */,
 				013C22D9253F3D0700B86C3D /* Sync.xcdatamodeld in Sources */,
 				019AE001253602740072E2E0 /* AppDelegate.swift in Sources */,

@@ -18,12 +18,6 @@ struct Notification {
     var time = String()
 }
 
-class SocialMediaTableViewCell: UITableViewCell {
-    @IBOutlet weak var socialIcon: UIImageView!
-    
-    
-}
-
 class NotificationHubViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITableViewDragDelegate {
     
     var socialMedia: [String] = ["Twitter", "Instagram", "LinkedIn", "Facebook", ]

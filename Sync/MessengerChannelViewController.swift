@@ -8,15 +8,33 @@
 
 import UIKit
 
-class MessengerChannelViewController: UIViewController {
-    @IBOutlet weak var messengerNotificationTable: UITableView!
+class MessengerChannelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var instagramNotificationTable: UITableView!{
+        didSet {
+            instagramNotificationTable.dataSource = self
+            instagramNotificationTable.delegate = self
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        messengerNotificationTable.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
+        instagramNotificationTable.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
+        
         // Do any additional setup after loading the view.
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //change to number of notifs
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell") as! SocialMediaTableViewCell
+        cell.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
+        cell.socialIcon.image = UIImage(named: "instagram-64")
+        return cell
+    }
 
     /*
     // MARK: - Navigation
