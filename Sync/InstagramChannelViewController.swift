@@ -1,5 +1,5 @@
 //
-//  MessengerChannelViewController.swift
+//  InstagramChannelViewController.swift
 //  Sync
 //
 //  Created by Gabriela Pulido on 10/20/20.
@@ -8,7 +8,9 @@
 
 import UIKit
 
-class MessengerChannelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class InstagramChannelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var instagramNotifications: [Notification] = []
     
     @IBOutlet weak var instagramNotificationTable: UITableView!{
         didSet {
@@ -26,7 +28,7 @@ class MessengerChannelViewController: UIViewController, UITableViewDelegate, UIT
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //change to number of notifs
-        return 1
+        return instagramNotifications.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
