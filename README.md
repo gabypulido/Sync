@@ -11,7 +11,9 @@ Alpha Release
 Contributions:
 
   Maria Maynard:
+  
     Signup screen with email sign up using firebase.
+    
     Social media opt in screen with place holders for social media login
   
 
