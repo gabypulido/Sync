@@ -30,6 +30,10 @@ class SignUpViewController: UIViewController {
         signUp.layer.cornerRadius = 10
         signUp.clipsToBounds = true
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+           self.view.endEditing(true)
+    }
 
     // when someone tries to sign up lets get their info and see if it works
     @IBAction func buttonPressed(_ sender: Any) {
