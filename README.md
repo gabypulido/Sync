@@ -16,6 +16,14 @@ Contributions:
    
   - Social media opt in screen with place holders for social media login
   
+  Gabriela Pulido:
+  
+   - Notification Hub with dummy notification placeholders
+   - Twitter Channel View 
+   - Instagram Channel View
+   - LinkedIn Channel View
+   - Facebook Channel View
+  
 
 Differences:
 
