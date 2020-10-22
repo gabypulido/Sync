@@ -21,6 +21,9 @@
 		01E092EB253E0EF300C86A29 /* NotificationHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E092EA253E0EF200C86A29 /* NotificationHubViewController.swift */; };
 		52BF09C32161593C1071379D /* Pods_Sync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB4359ECA7F4CFFE39BA91C /* Pods_Sync.framework */; };
 		5CE90EC42540D0C0008E1A9C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE90EC32540D0C0008E1A9C /* SignUpViewController.swift */; };
+		5CE90ECB2541085D008E1A9C /* OptInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE90ECA2541085D008E1A9C /* OptInViewController.swift */; };
+		5CE90ECE254109F2008E1A9C /* 120620519_777256209718165_3142639425989673168_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5CE90ECD254109F2008E1A9C /* 120620519_777256209718165_3142639425989673168_n.jpg */; };
+		5CE90EE625411E80008E1A9C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CE90EE525411E80008E1A9C /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		01E092EA253E0EF200C86A29 /* NotificationHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHubViewController.swift; sourceTree = "<group>"; };
 		4F63892D5690C7BFF35B2DEF /* Pods-Sync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync.debug.xcconfig"; path = "Target Support Files/Pods-Sync/Pods-Sync.debug.xcconfig"; sourceTree = "<group>"; };
 		5CE90EC32540D0C0008E1A9C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		5CE90ECA2541085D008E1A9C /* OptInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptInViewController.swift; sourceTree = "<group>"; };
+		5CE90ECD254109F2008E1A9C /* 120620519_777256209718165_3142639425989673168_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 120620519_777256209718165_3142639425989673168_n.jpg; sourceTree = "<group>"; };
+		5CE90EE525411E80008E1A9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		88D7D315DEF95294DE3445CA /* Pods-Sync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync.release.xcconfig"; path = "Target Support Files/Pods-Sync/Pods-Sync.release.xcconfig"; sourceTree = "<group>"; };
 		CDB4359ECA7F4CFFE39BA91C /* Pods_Sync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -77,14 +83,17 @@
 		019ADFFF253602740072E2E0 /* Sync */ = {
 			isa = PBXGroup;
 			children = (
+				5CE90ECD254109F2008E1A9C /* 120620519_777256209718165_3142639425989673168_n.jpg */,
 				019AE000253602740072E2E0 /* AppDelegate.swift */,
 				5CE90EC32540D0C0008E1A9C /* SignUpViewController.swift */,
 				019AE002253602740072E2E0 /* ViewController.swift */,
 				019AE004253602740072E2E0 /* Main.storyboard */,
+				5CE90ECA2541085D008E1A9C /* OptInViewController.swift */,
 				01E092EA253E0EF200C86A29 /* NotificationHubViewController.swift */,
 				019AE00A253602740072E2E0 /* Assets.xcassets */,
 				019AE00C253602740072E2E0 /* LaunchScreen.storyboard */,
 				019AE00F253602740072E2E0 /* Info.plist */,
+				5CE90EE525411E80008E1A9C /* GoogleService-Info.plist */,
 				019AE007253602740072E2E0 /* Sync.xcdatamodeld */,
 				013C22D7253F3D0700B86C3D /* Sync.xcdatamodeld */,
 				011FDA3E253F645400EBAA44 /* FacebookChannelViewController.swift */,
@@ -173,7 +182,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CE90ECE254109F2008E1A9C /* 120620519_777256209718165_3142639425989673168_n.jpg in Resources */,
 				019AE00E253602740072E2E0 /* LaunchScreen.storyboard in Resources */,
+				5CE90EE625411E80008E1A9C /* GoogleService-Info.plist in Resources */,
 				019AE00B253602740072E2E0 /* Assets.xcassets in Resources */,
 				019AE006253602740072E2E0 /* Main.storyboard in Resources */,
 			);
@@ -248,6 +259,7 @@
 				011FDA3F253F645400EBAA44 /* FacebookChannelViewController.swift in Sources */,
 				013C22EE253F479400B86C3D /* TwitterChannelViewController.swift in Sources */,
 				01E092EB253E0EF300C86A29 /* NotificationHubViewController.swift in Sources */,
+				5CE90ECB2541085D008E1A9C /* OptInViewController.swift in Sources */,
 				011FDA39253F63FC00EBAA44 /* MessengerChannelViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>809645273514-klm3lec75pae0l24f26g57f942uldsvj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.809645273514-klm3lec75pae0l24f26g57f942uldsvj</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCMy9vyo8z2VQtZketK5eKQce2aOoEhyUA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>809645273514</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>CS371L.Sync</string>
+	<key>PROJECT_ID</key>
+	<string>sync-22dc3</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sync-22dc3.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:809645273514:ios:cb7f7fb688c69b25173bd3</string>
+	<key>DATABASE_URL</key>
+	<string>https://sync-22dc3.firebaseio.com</string>
+</dict>
+</plist>
