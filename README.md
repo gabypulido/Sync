@@ -10,7 +10,7 @@ Alpha Release
 ----------------
 Contributions:
 
-  Maria Maynard:
+  Maria Maynard
   
     Signup screen with email sign up using firebase.
     
