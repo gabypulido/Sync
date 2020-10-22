@@ -9,9 +9,12 @@
 import UIKit
 
 class TwitterChannelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var twitterNotifications: [Notification] = []
+    var delegate: UIViewController!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //change to number of notifs
-        return 1
+        return twitterNotifications.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -28,8 +31,6 @@ class TwitterChannelViewController: UIViewController, UITableViewDelegate, UITab
             twitterNotificationTable.delegate = self
         }
     }
-    
-    var delegate: UIViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()

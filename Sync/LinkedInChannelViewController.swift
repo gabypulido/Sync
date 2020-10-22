@@ -9,6 +9,21 @@
 import UIKit
 
 class LinkedInChannelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var linkedInNotifications: [Notification] = []
+    var delegate: UIViewController!
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return linkedInNotifications.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell") as! SocialMediaTableViewCell
+        cell.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
+        cell.socialIcon.image = UIImage(named: "linkedin-3-64")
+        return cell
+    }
+    
     @IBOutlet weak var linkedInNotificationTable: UITableView!{
         didSet {
             linkedInNotificationTable.dataSource = self
@@ -22,17 +37,7 @@ class LinkedInChannelViewController: UIViewController, UITableViewDelegate, UITa
         // Do any additional setup after loading the view.
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //change to number of notifs
-        return 1
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell") as! SocialMediaTableViewCell
-        cell.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
-        cell.socialIcon.image = UIImage(named: "linkedin-3-64")
-        return cell
-    }
 
     /*
     // MARK: - Navigation

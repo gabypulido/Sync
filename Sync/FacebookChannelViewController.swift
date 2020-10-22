@@ -9,12 +9,14 @@
 import UIKit
 
 class FacebookChannelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var facebookNotificationTable: UITableView!{
         didSet {
             facebookNotificationTable.dataSource = self
             facebookNotificationTable.delegate = self
         }
     }
+    var facebookNotifications: [Notification] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,7 @@ class FacebookChannelViewController: UIViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //change to number of notifs
-        return 1
+        return facebookNotifications.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
