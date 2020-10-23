@@ -34,4 +34,8 @@ class InstagramChannelViewController: UIViewController, UITableViewDelegate, UIT
         cell.socialIcon.image = UIImage(named: "instagram-64")
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+       tableView.deselectRow(at: indexPath, animated: true)
+   }
 }

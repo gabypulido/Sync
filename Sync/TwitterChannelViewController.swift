@@ -31,6 +31,10 @@ class TwitterChannelViewController: UIViewController, UITableViewDelegate, UITab
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+       tableView.deselectRow(at: indexPath, animated: true)
+   }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         twitterNotificationTable.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)

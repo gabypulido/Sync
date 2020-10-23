@@ -34,4 +34,8 @@ class FacebookChannelViewController: UIViewController, UITableViewDelegate, UITa
         cell.socialIcon.image = UIImage(named: "facebook-3-64")
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+       tableView.deselectRow(at: indexPath, animated: true)
+   }
 }

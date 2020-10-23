@@ -35,4 +35,8 @@ class LinkedInChannelViewController: UIViewController, UITableViewDelegate, UITa
         cell.socialIcon.image = UIImage(named: "linkedin-3-64")
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+       tableView.deselectRow(at: indexPath, animated: true)
+   }
 }
