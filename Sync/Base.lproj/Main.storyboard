@@ -410,6 +410,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="notificationBody" destination="GkK-zg-xGy" id="ul8-4v-e2A"/>
+                                            <outlet property="notificationTime" destination="Lzs-7G-gMG" id="kSv-vd-SyL"/>
                                             <outlet property="socialIcon" destination="quz-k6-Rb3" id="EGm-ZO-njs"/>
                                         </connections>
                                     </tableViewCell>

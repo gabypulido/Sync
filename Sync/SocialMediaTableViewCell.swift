@@ -11,4 +11,6 @@ import Foundation
 
 class SocialMediaTableViewCell: UITableViewCell {
     @IBOutlet weak var socialIcon: UIImageView!
+    @IBOutlet weak var notificationTime: UILabel!
+    @IBOutlet weak var notificationBody: UILabel!
 }

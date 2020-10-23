@@ -100,7 +100,7 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         header.textLabel?.textColor = UIColor(hue: 0.125, saturation: 0.11, brightness: 0.98, alpha: 1.0)
     }
     
-    //TODO: Figure out drag and drop 
+    //TODO: Figure out drag and drop sections
     func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
         let dragItem = UIDragItem(itemProvider: NSItemProvider())
         dragItem.localObject = self.sections[indexPath.section]
