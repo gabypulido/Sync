@@ -14,15 +14,19 @@ Contributions:
   
   - Signup screen with email sign up using firebase.
    
-  - Social media opt in screen with place holders for social media login
+  - Social media opt in screen with place holders for social media login.
   
   Gabriela Pulido:
-  
-   - Notification Hub with dummy notification placeholders
-   - Twitter Channel View 
-   - Instagram Channel View
-   - LinkedIn Channel View
-   - Facebook Channel View
+   - Notification Hub table view with notification placeholders.
+   - Twitter Channel table view.
+   - Instagram Channel table view.
+   - LinkedIn Channel table view.
+   - Facebook Channel table view.
+   
+  Ji-Young Seo:
+   - Splash screen
+   - Log in screen that authenticates using firebase.
+   
   
 Audrey Chung:
   
