@@ -129,36 +129,38 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         self.sections.insert(mover, at: destinationIndexPath.section)
     }
 
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+            dismiss(animated: true, completion: nil)
+        }
     
     @IBAction func hamTapped(_ sender: Any) {
         guard let settingsViewController = storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as? SettingsViewController else { return }
-        settingsViewController.didTapMenuType = { menuType in
+        let tap = UITapGestureRecognizer(target: self, action:    #selector(self.handleTap(_:)))
+        transiton.dimmingView.addGestureRecognizer(tap)
+         settingsViewController.didTapMenuType = { menuType in
             self.transitionToNew(menuType)
         }
         settingsViewController.modalPresentationStyle = .overCurrentContext
         settingsViewController.transitioningDelegate = self
         present(settingsViewController, animated: true)
     }
-
+    
     func transitionToNew(_ menuType: MenuType) {
 
         topView?.removeFromSuperview()
         switch menuType {
         case .addSocial:
+            let view = UIView()
             let socialVC = OptInViewController()
             view.addSubview(socialVC.view)
             self.topView = socialVC.view
             addChildViewController(socialVC)
-            
-//            let view = UIView()
-//            view.frame = self.view.bounds
-//            self.view.addSubview(view)
-//            self.topView = view
         case .passReset:
             let view = UIView()
-            view.frame = self.view.bounds
-            self.view.addSubview(view)
-            self.topView = view
+            let passVC = ChangePasswordViewController()
+            view.addSubview(passVC.view)
+            self.topView = passVC.view
+            addChildViewController(passVC)
         default:
             break
         }
