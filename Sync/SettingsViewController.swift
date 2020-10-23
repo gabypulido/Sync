@@ -31,15 +31,21 @@ class SettingsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let menuType = MenuType(rawValue: indexPath.row) else { return }
         dismiss(animated: true) { [weak self] in
+            print("Dismissing: \(menuType)")
             self?.didTapMenuType?(menuType)
         }
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SegueChangePass", let nextVC = segue.destination  as? ChangePasswordViewController{
+            
+        } else if segue.identifier == "SegueSocial", let nextVC = segue.destination  as? OptInViewController{
+            
+        }
+    }
+    
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "SegueChangePass", let nextVC = segue.destination  as? ChangePasswordViewController{
-//            
-//        } else if segue.identifier == "SegueSocial", let nextVC = segue.destination  as? OptInViewController{
-//            
 //        }
 //    }
 
