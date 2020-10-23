@@ -18,15 +18,19 @@ struct Notification {
     var time = String()
 }
 
+class SocialMediaTableViewCell: UITableViewCell {
+    @IBOutlet weak var socialIcon: UIImageView!
+    
+    
+}
+
 class NotificationHubViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITableViewDragDelegate {
     
-    var twitterNotifications = [Notification(body: "Twitter Test 1", time: "1"), Notification(body: "Twitter Test 1", time: "2"), Notification(body: "Twitter Test 3", time: "3")]
-    
-    var instagramNotifications = [Notification(body: "Instagram Test 1", time: "1"), Notification(body: "Instagram Test 2", time: "2"), Notification(body: "Instagram Test 3", time: "3")]
-    
-    var linkedInNotifications = [Notification(body: "LinkedIn Test 1", time: "1"), Notification(body: "LinkedIn Test 2", time: "2"), Notification(body: "LinkedIn Test 3", time: "3")]
-    
-    var facebookNotifications = [Notification(body: "Facebook Test 1", time: "1"), Notification(body: "Facebook Test 2", time: "2"), Notification(body: "Facebook Test 3", time: "3")]
+    var socialMedia: [String] = ["Twitter", "Instagram", "LinkedIn", "Facebook", ]
+    var twitterNotifications = [Notification(body: "Twitter Test", time: "time")]
+    var instagramNotifications = [Notification(body: "Instagram Test", time: "time")]
+    var linkedInNotifications = [Notification(body: "LinkedIn Test", time: "time")]
+    var facebookNotifications = [Notification(body: "Facebook Test", time: "time")]
     
     var sections = [Category]()
     
@@ -44,6 +48,8 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //tableCell.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
+        // Do any additional setup after loading the view.
         sections = [Category(name: "Twitter", items: twitterNotifications), Category(name: "Instagram", items: instagramNotifications), Category(name: "LinkedIn", items: linkedInNotifications), Category(name: "Facebook", items: facebookNotifications)]
         notificationHubTable.backgroundColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
         self.view.backgroundColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
@@ -54,6 +60,13 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! SocialMediaTableViewCell
+//        cell.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
+//        let row = indexPath.row
+//        let socialMediaNetwork = socialMedia[row]
+//        cell.socialMediaNameLabel.text = socialMediaNetwork
+//
+//        return cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell") as! SocialMediaTableViewCell
         let items = self.sections[indexPath.section].items
         cell.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
@@ -77,9 +90,9 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         tableView.deselectRow(at: indexPath, animated: true)
         switch sections[indexPath.section].name {
         case "Twitter":
-            self.performSegue(withIdentifier: "TwitterChannelSegue", sender: self)
+                self.performSegue(withIdentifier: "TwitterChannelSegue", sender: self)
         case "Instagram":
-            self.performSegue(withIdentifier: "InstagramChannelSegue", sender: self)
+            self.performSegue(withIdentifier: "MessengerChannelSegue", sender: self)
         case "LinkedIn":
             self.performSegue(withIdentifier: "LinkedInChannelSegue", sender: self)
         case "Facebook":
@@ -103,7 +116,7 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         header.textLabel?.textColor = UIColor(hue: 0.125, saturation: 0.11, brightness: 0.98, alpha: 1.0)
     }
     
-    //TODO: Figure out drag and drop sections
+    //TODO: Figure out drag and drop 
     func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
         let dragItem = UIDragItem(itemProvider: NSItemProvider())
         dragItem.localObject = self.sections[indexPath.section]
@@ -166,23 +179,15 @@ extension NotificationHubViewController: UIViewControllerTransitioningDelegate {
         return transiton
     }
     
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier{
-        case "TwitterChannelSegue":
-            let nextVC = segue.destination as? TwitterChannelViewController
-            nextVC?.twitterNotifications = sections[0].items
-        case "InstagramChannelSegue":
-            let nextVC = segue.destination as? InstagramChannelViewController
-            nextVC?.instagramNotifications = sections[1].items
-        case "LinkedInChannelSegue":
-            let nextVC = segue.destination as? LinkedInChannelViewController
-            nextVC?.linkedInNotifications = sections[2].items
-        case "FacebookChannelSegue":
-            let nextVC = segue.destination as? FacebookChannelViewController
-            nextVC?.facebookNotifications = sections[3].items
-        default:
-            print("error")
-        }
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
+    */
 
 }
