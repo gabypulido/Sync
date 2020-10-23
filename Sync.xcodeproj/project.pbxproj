@@ -24,6 +24,9 @@
 		5CE90ECB2541085D008E1A9C /* OptInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE90ECA2541085D008E1A9C /* OptInViewController.swift */; };
 		5CE90EE625411E80008E1A9C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CE90EE525411E80008E1A9C /* GoogleService-Info.plist */; };
 		A0245C34254143140031E0DD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0245C33254143140031E0DD /* SignInViewController.swift */; };
+		A3FF5D3525422E3C0079BC1A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF5D3425422E3B0079BC1A /* SettingsViewController.swift */; };
+		A3FF5D382542337F0079BC1A /* MenuTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF5D372542337F0079BC1A /* MenuTransition.swift */; };
+		A3FF5D3B254246440079BC1A /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF5D3A254246440079BC1A /* ChangePasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		5CE90EE525411E80008E1A9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		88D7D315DEF95294DE3445CA /* Pods-Sync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync.release.xcconfig"; path = "Target Support Files/Pods-Sync/Pods-Sync.release.xcconfig"; sourceTree = "<group>"; };
 		A0245C33254143140031E0DD /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		A3FF5D3425422E3B0079BC1A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A3FF5D372542337F0079BC1A /* MenuTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTransition.swift; sourceTree = "<group>"; };
+		A3FF5D3A254246440079BC1A /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		CDB4359ECA7F4CFFE39BA91C /* Pods_Sync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -88,8 +94,11 @@
 				A0245C33254143140031E0DD /* SignInViewController.swift */,
 				019AE002253602740072E2E0 /* ViewController.swift */,
 				019AE004253602740072E2E0 /* Main.storyboard */,
+				A3FF5D372542337F0079BC1A /* MenuTransition.swift */,
+				A3FF5D3425422E3B0079BC1A /* SettingsViewController.swift */,
 				5CE90ECA2541085D008E1A9C /* OptInViewController.swift */,
 				01E092EA253E0EF200C86A29 /* NotificationHubViewController.swift */,
+				A3FF5D3A254246440079BC1A /* ChangePasswordViewController.swift */,
 				019AE00A253602740072E2E0 /* Assets.xcassets */,
 				019AE00C253602740072E2E0 /* LaunchScreen.storyboard */,
 				019AE00F253602740072E2E0 /* Info.plist */,
@@ -252,13 +261,16 @@
 				019AE009253602740072E2E0 /* Sync.xcdatamodeld in Sources */,
 				019AE003253602740072E2E0 /* ViewController.swift in Sources */,
 				013C22D9253F3D0700B86C3D /* Sync.xcdatamodeld in Sources */,
+				A3FF5D3B254246440079BC1A /* ChangePasswordViewController.swift in Sources */,
 				019AE001253602740072E2E0 /* AppDelegate.swift in Sources */,
 				5CE90EC42540D0C0008E1A9C /* SignUpViewController.swift in Sources */,
 				011FDA3C253F643A00EBAA44 /* LinkedInChannelViewController.swift in Sources */,
 				011FDA3F253F645400EBAA44 /* FacebookChannelViewController.swift in Sources */,
 				013C22EE253F479400B86C3D /* TwitterChannelViewController.swift in Sources */,
 				A0245C34254143140031E0DD /* SignInViewController.swift in Sources */,
+				A3FF5D382542337F0079BC1A /* MenuTransition.swift in Sources */,
 				01E092EB253E0EF300C86A29 /* NotificationHubViewController.swift in Sources */,
+				A3FF5D3525422E3C0079BC1A /* SettingsViewController.swift in Sources */,
 				5CE90ECB2541085D008E1A9C /* OptInViewController.swift in Sources */,
 				011FDA39253F63FC00EBAA44 /* MessengerChannelViewController.swift in Sources */,
 			);

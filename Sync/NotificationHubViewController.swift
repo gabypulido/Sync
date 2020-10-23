@@ -34,6 +34,9 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
     
     var sections = [Category]()
     
+    let transiton = MenuTransition()
+    var topView: UIView?
+    
     @IBOutlet weak var notificationHubTable: UITableView!{
         didSet {
             notificationHubTable.dataSource = self
@@ -126,8 +129,53 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         self.sections.insert(mover, at: destinationIndexPath.section)
     }
 
-
     
+    @IBAction func hamTapped(_ sender: Any) {
+        guard let settingsViewController = storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as? SettingsViewController else { return }
+        settingsViewController.didTapMenuType = { menuType in
+            self.transitionToNew(menuType)
+        }
+        settingsViewController.modalPresentationStyle = .overCurrentContext
+        settingsViewController.transitioningDelegate = self
+        present(settingsViewController, animated: true)
+    }
+
+    func transitionToNew(_ menuType: MenuType) {
+
+        topView?.removeFromSuperview()
+        switch menuType {
+        case .addSocial:
+            let socialVC = OptInViewController()
+            view.addSubview(socialVC.view)
+            self.topView = socialVC.view
+            addChildViewController(socialVC)
+            
+//            let view = UIView()
+//            view.frame = self.view.bounds
+//            self.view.addSubview(view)
+//            self.topView = view
+        case .passReset:
+            let view = UIView()
+            view.frame = self.view.bounds
+            self.view.addSubview(view)
+            self.topView = view
+        default:
+            break
+        }
+    }
+
+}
+
+extension NotificationHubViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transiton.isPresenting = true
+        return transiton
+    }
+
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transiton.isPresenting = false
+        return transiton
+    }
     
 
     /*
