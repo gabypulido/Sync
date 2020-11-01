@@ -130,39 +130,39 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
     }
 
     
-    @IBAction func hamTapped(_ sender: Any) {
-        guard let settingsViewController = storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as? SettingsViewController else { return }
-        settingsViewController.didTapMenuType = { menuType in
-            self.transitionToNew(menuType)
-        }
-        settingsViewController.modalPresentationStyle = .overCurrentContext
-        settingsViewController.transitioningDelegate = self
-        present(settingsViewController, animated: true)
-    }
+//    @IBAction func hamTapped(_ sender: Any) {
+//        guard let settingsViewController = storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as? SettingsViewController else { return }
+//        settingsViewController.didTapMenuType = { menuType in
+//            self.transitionToNew(menuType)
+//        }
+//        settingsViewController.modalPresentationStyle = .overCurrentContext
+//        settingsViewController.transitioningDelegate = self
+//        present(settingsViewController, animated: true)
+//    }
 
-    func transitionToNew(_ menuType: MenuType) {
-
-        topView?.removeFromSuperview()
-        switch menuType {
-        case .addSocial:
-            let socialVC = OptInViewController()
-            view.addSubview(socialVC.view)
-            self.topView = socialVC.view
-            addChildViewController(socialVC)
-            
+//    func transitionToNew(_ menuType: MenuType) {
+//
+//        topView?.removeFromSuperview()
+//        switch menuType {
+//        case .addSocial:
+//            let socialVC = OptInViewController()
+//            view.addSubview(socialVC.view)
+//            self.topView = socialVC.view
+//            addChildViewController(socialVC)
+//
+////            let view = UIView()
+////            view.frame = self.view.bounds
+////            self.view.addSubview(view)
+////            self.topView = view
+//        case .passReset:
 //            let view = UIView()
 //            view.frame = self.view.bounds
 //            self.view.addSubview(view)
 //            self.topView = view
-        case .passReset:
-            let view = UIView()
-            view.frame = self.view.bounds
-            self.view.addSubview(view)
-            self.topView = view
-        default:
-            break
-        }
-    }
+//        default:
+//            break
+//        }
+//    }
 
 }
 

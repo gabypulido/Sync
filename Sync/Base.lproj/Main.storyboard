@@ -259,23 +259,41 @@
                                     <action selector="buttonPressed:" destination="L2o-YL-fH5" eventType="touchUpInside" id="q5K-gT-KUW"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="instagram-64.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hc2-nw-2uf">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="instagram-64.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hc2-nw-2uf">
                                 <rect key="frame" x="52" y="609" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1Xr-3A-47w"/>
+                                    <constraint firstAttribute="width" constant="40" id="peo-Dm-VWe"/>
+                                </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="twitter-64.png" translatesAutoresizingMaskIntoConstraints="NO" id="J4h-se-j6S">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="twitter-64.png" translatesAutoresizingMaskIntoConstraints="NO" id="J4h-se-j6S">
                                 <rect key="frame" x="52" y="453" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="2j1-hG-Tc4"/>
+                                    <constraint firstAttribute="height" constant="40" id="Z03-OH-CjU"/>
+                                </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="facebook-3-64.png" translatesAutoresizingMaskIntoConstraints="NO" id="DE9-Zf-pxX">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="facebook-3-64.png" translatesAutoresizingMaskIntoConstraints="NO" id="DE9-Zf-pxX">
                                 <rect key="frame" x="52" y="531" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Qk2-PC-csp"/>
+                                    <constraint firstAttribute="height" constant="40" id="ViH-Rx-dxM"/>
+                                </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="linkedin-3-64.png" translatesAutoresizingMaskIntoConstraints="NO" id="vFC-Jn-LgN">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="linkedin-3-64.png" translatesAutoresizingMaskIntoConstraints="NO" id="vFC-Jn-LgN">
                                 <rect key="frame" x="52" y="687" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="BGj-fy-rIe"/>
+                                    <constraint firstAttribute="height" constant="40" id="MiL-vq-Ivv"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="92k-HP-4Nq"/>
                         <color key="backgroundColor" red="0.68235294117647061" green="0.85098039215686272" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="qOa-K2-FgT" firstAttribute="centerX" secondItem="vG8-xY-bC0" secondAttribute="centerX" id="0xC-Va-DJr"/>
+                            <constraint firstItem="uxm-1r-PEn" firstAttribute="leading" secondItem="92k-HP-4Nq" secondAttribute="leading" constant="37" id="6CL-5d-NGE"/>
+                            <constraint firstItem="J4h-se-j6S" firstAttribute="top" secondItem="uxm-1r-PEn" secondAttribute="bottom" constant="-55" id="6IL-jj-MWr"/>
                             <constraint firstItem="Hc2-nw-2uf" firstAttribute="leading" secondItem="92k-HP-4Nq" secondAttribute="leading" constant="52" id="8R6-Mv-ZPs"/>
                             <constraint firstItem="4z6-O9-iWq" firstAttribute="top" secondItem="wcZ-0l-r9c" secondAttribute="bottom" constant="8" symbolic="YES" id="8To-7W-I0N"/>
                             <constraint firstItem="vFC-Jn-LgN" firstAttribute="top" secondItem="Hc2-nw-2uf" secondAttribute="bottom" constant="38" id="9R9-vh-uR5"/>
@@ -286,15 +304,19 @@
                             <constraint firstItem="NOg-nP-eKN" firstAttribute="centerX" secondItem="vG8-xY-bC0" secondAttribute="centerX" id="Laq-35-PmH"/>
                             <constraint firstItem="DE9-Zf-pxX" firstAttribute="top" secondItem="uxm-1r-PEn" secondAttribute="bottom" constant="23" id="Le2-LU-2h2"/>
                             <constraint firstItem="zl8-kn-Jma" firstAttribute="top" secondItem="FQj-k7-Cix" secondAttribute="bottom" constant="55" id="N1o-sz-Z5b"/>
+                            <constraint firstItem="wcZ-0l-r9c" firstAttribute="leading" secondItem="92k-HP-4Nq" secondAttribute="leading" constant="37" id="OZk-UO-5lD"/>
+                            <constraint firstItem="uxm-1r-PEn" firstAttribute="leading" secondItem="J4h-se-j6S" secondAttribute="trailing" constant="-55" id="OgJ-Wd-9Qs"/>
                             <constraint firstItem="E3N-ch-cNs" firstAttribute="top" secondItem="Stt-nk-GMh" secondAttribute="bottom" constant="18" id="PuD-jK-0Xg"/>
                             <constraint firstItem="NOg-nP-eKN" firstAttribute="top" secondItem="zl8-kn-Jma" secondAttribute="bottom" constant="10" id="UvT-Qb-mOX"/>
                             <constraint firstItem="vFC-Jn-LgN" firstAttribute="leading" secondItem="92k-HP-4Nq" secondAttribute="leading" constant="52" id="WIQ-vB-Oey"/>
                             <constraint firstItem="zl8-kn-Jma" firstAttribute="centerX" secondItem="vG8-xY-bC0" secondAttribute="centerX" id="bJA-L1-83G"/>
+                            <constraint firstItem="qOa-K2-FgT" firstAttribute="leading" secondItem="92k-HP-4Nq" secondAttribute="leading" constant="37" id="fxz-xg-LIc"/>
                             <constraint firstItem="Stt-nk-GMh" firstAttribute="centerX" secondItem="vG8-xY-bC0" secondAttribute="centerX" id="g8W-Q4-1Gw"/>
                             <constraint firstItem="FQj-k7-Cix" firstAttribute="centerX" secondItem="vG8-xY-bC0" secondAttribute="centerX" id="gxR-GA-99c"/>
                             <constraint firstItem="Hc2-nw-2uf" firstAttribute="top" secondItem="DE9-Zf-pxX" secondAttribute="bottom" constant="38" id="hud-jZ-fOE"/>
                             <constraint firstItem="wcZ-0l-r9c" firstAttribute="top" secondItem="qOa-K2-FgT" secondAttribute="bottom" constant="8" symbolic="YES" id="iWB-4M-bQZ"/>
                             <constraint firstItem="wcZ-0l-r9c" firstAttribute="centerX" secondItem="vG8-xY-bC0" secondAttribute="centerX" id="in9-bB-QXu"/>
+                            <constraint firstItem="4z6-O9-iWq" firstAttribute="leading" secondItem="92k-HP-4Nq" secondAttribute="leading" constant="37" id="jtN-3I-WkW"/>
                             <constraint firstItem="DE9-Zf-pxX" firstAttribute="leading" secondItem="92k-HP-4Nq" secondAttribute="leading" constant="52" id="k7Q-wO-waC"/>
                             <constraint firstItem="J4h-se-j6S" firstAttribute="leading" secondItem="92k-HP-4Nq" secondAttribute="leading" constant="52" id="nyO-nv-gu2"/>
                             <constraint firstItem="J4h-se-j6S" firstAttribute="top" secondItem="NOg-nP-eKN" secondAttribute="bottom" constant="82" id="sw0-RP-tk4"/>
@@ -416,6 +438,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="icons8-menu-50" id="gte-FL-den">
                             <connections>
                                 <action selector="hamTapped:" destination="e0G-6Y-1Pv" id="BSr-Zq-Jdl"/>
+                                <segue destination="4xG-69-LgW" kind="show" identifier="tempSegue" id="R6M-33-jEt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1015,6 +1038,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="uSa-xy-wfD"/>
+        <segue reference="R6M-33-jEt"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="120620519_777256209718165_3142639425989673168_n.jpg" width="2048" height="2048"/>
