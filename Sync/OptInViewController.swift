@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class OptInViewController: UIViewController {
 
@@ -22,6 +23,7 @@ class OptInViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         twitter.layer.cornerRadius = 10
         twitter.clipsToBounds = true
         instagram.layer.cornerRadius = 10

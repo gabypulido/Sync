@@ -204,6 +204,8 @@
                                 <color key="backgroundColor" red="1" green="0.65098039220000004" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="4B9-ma-Znd"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="340" id="G5L-yC-w96"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="HGD-I5-4U5"/>
                                     <constraint firstAttribute="width" constant="340" id="uVJ-su-9RG"/>
                                 </constraints>
                                 <color key="tintColor" red="1" green="0.65098039220000004" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -214,10 +216,12 @@
                                     <action selector="buttonPressed:" destination="L2o-YL-fH5" eventType="touchUpInside" id="tl7-Ch-1es"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOa-K2-FgT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOa-K2-FgT" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="37" y="516" width="340" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.65098039220000004" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="Nbq-wm-Knm"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="340" id="SbS-kD-tUd"/>
                                     <constraint firstAttribute="width" constant="340" id="XAn-xB-Ap1"/>
                                     <constraint firstAttribute="height" constant="70" id="ufX-6a-BdC"/>
                                 </constraints>
@@ -233,8 +237,10 @@
                                 <rect key="frame" x="37" y="594" width="340" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.65098039220000004" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="340" id="BO8-4V-SR1"/>
                                     <constraint firstAttribute="height" constant="70" id="VqQ-pA-Qgh"/>
                                     <constraint firstAttribute="width" constant="340" id="ZUO-Xh-vRQ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="kqh-70-3RB"/>
                                 </constraints>
                                 <color key="tintColor" red="1" green="0.65098039220000004" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Sign into Instagram">
@@ -250,6 +256,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="340" id="DSJ-od-GSZ"/>
                                     <constraint firstAttribute="height" constant="70" id="Utx-tW-gD8"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="cCJ-KR-9sX"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="340" id="pOz-Rm-11J"/>
                                 </constraints>
                                 <color key="tintColor" red="1" green="0.65098039220000004" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Sign into Linkedin">

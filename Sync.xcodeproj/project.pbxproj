@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010CAC1E25509589003C8BB7 /* FacebookLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010CAC1D25509589003C8BB7 /* FacebookLoginButton.swift */; };
 		011FDA39253F63FC00EBAA44 /* MessengerChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011FDA38253F63FC00EBAA44 /* MessengerChannelViewController.swift */; };
 		011FDA3C253F643A00EBAA44 /* LinkedInChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011FDA3B253F643A00EBAA44 /* LinkedInChannelViewController.swift */; };
 		011FDA3F253F645400EBAA44 /* FacebookChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011FDA3E253F645400EBAA44 /* FacebookChannelViewController.swift */; };
@@ -19,7 +20,7 @@
 		019AE00B253602740072E2E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019AE00A253602740072E2E0 /* Assets.xcassets */; };
 		019AE00E253602740072E2E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019AE00C253602740072E2E0 /* LaunchScreen.storyboard */; };
 		01E092EB253E0EF300C86A29 /* NotificationHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E092EA253E0EF200C86A29 /* NotificationHubViewController.swift */; };
-		52BF09C32161593C1071379D /* Pods_Sync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB4359ECA7F4CFFE39BA91C /* Pods_Sync.framework */; };
+		4FC2FE4FBD5C4C282A7D1937 /* Pods_Sync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA7B8037C6FD25CF3E267E9 /* Pods_Sync.framework */; };
 		5CE608FC254299570061F10E /* README.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5CE608FB254299570061F10E /* README.pdf */; };
 		5CE90EC42540D0C0008E1A9C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE90EC32540D0C0008E1A9C /* SignUpViewController.swift */; };
 		5CE90ECB2541085D008E1A9C /* OptInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE90ECA2541085D008E1A9C /* OptInViewController.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		010CAC1D25509589003C8BB7 /* FacebookLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginButton.swift; sourceTree = "<group>"; };
 		011FDA38253F63FC00EBAA44 /* MessengerChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerChannelViewController.swift; sourceTree = "<group>"; };
 		011FDA3B253F643A00EBAA44 /* LinkedInChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedInChannelViewController.swift; sourceTree = "<group>"; };
 		011FDA3E253F645400EBAA44 /* FacebookChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookChannelViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 		019AE00D253602740072E2E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		019AE00F253602740072E2E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01E092EA253E0EF200C86A29 /* NotificationHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHubViewController.swift; sourceTree = "<group>"; };
+		2BA7B8037C6FD25CF3E267E9 /* Pods_Sync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F63892D5690C7BFF35B2DEF /* Pods-Sync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync.debug.xcconfig"; path = "Target Support Files/Pods-Sync/Pods-Sync.debug.xcconfig"; sourceTree = "<group>"; };
 		5CE608FB254299570061F10E /* README.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = README.pdf; sourceTree = "<group>"; };
 		5CE90EC32540D0C0008E1A9C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -55,7 +58,6 @@
 		A3FF5D3425422E3B0079BC1A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A3FF5D372542337F0079BC1A /* MenuTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTransition.swift; sourceTree = "<group>"; };
 		A3FF5D3A254246440079BC1A /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
-		CDB4359ECA7F4CFFE39BA91C /* Pods_Sync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52BF09C32161593C1071379D /* Pods_Sync.framework in Frameworks */,
+				4FC2FE4FBD5C4C282A7D1937 /* Pods_Sync.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +114,7 @@
 				011FDA3B253F643A00EBAA44 /* LinkedInChannelViewController.swift */,
 				011FDA38253F63FC00EBAA44 /* MessengerChannelViewController.swift */,
 				013C22ED253F479400B86C3D /* TwitterChannelViewController.swift */,
+				010CAC1D25509589003C8BB7 /* FacebookLoginButton.swift */,
 			);
 			path = Sync;
 			sourceTree = "<group>";
@@ -119,7 +122,7 @@
 		080743EAF557B495BF690010 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CDB4359ECA7F4CFFE39BA91C /* Pods_Sync.framework */,
+				2BA7B8037C6FD25CF3E267E9 /* Pods_Sync.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -144,7 +147,7 @@
 				019ADFF9253602740072E2E0 /* Sources */,
 				019ADFFA253602740072E2E0 /* Frameworks */,
 				019ADFFB253602740072E2E0 /* Resources */,
-				B51EEF962A62B54795260630 /* [CP] Embed Pods Frameworks */,
+				27453CB7EEDB128BFAB90701 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,6 +183,9 @@
 				Base,
 			);
 			mainGroup = 019ADFF4253602740072E2E0;
+			packageReferences = (
+				010CAC1725508F60003C8BB7 /* RemoteSwiftPackageReference */,
+			);
 			productRefGroup = 019ADFFE253602740072E2E0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -205,6 +211,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		27453CB7EEDB128BFAB90701 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sync/Pods-Sync-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sync/Pods-Sync-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sync/Pods-Sync-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2F8DE76FBA150B40E379937F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -227,34 +250,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B51EEF962A62B54795260630 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Sync/Pods-Sync-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sync/Pods-Sync-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -265,6 +260,7 @@
 				019AE009253602740072E2E0 /* Sync.xcdatamodeld in Sources */,
 				019AE003253602740072E2E0 /* ViewController.swift in Sources */,
 				013C22D9253F3D0700B86C3D /* Sync.xcdatamodeld in Sources */,
+				010CAC1E25509589003C8BB7 /* FacebookLoginButton.swift in Sources */,
 				A3FF5D3B254246440079BC1A /* ChangePasswordViewController.swift in Sources */,
 				019AE001253602740072E2E0 /* AppDelegate.swift in Sources */,
 				5CE90EC42540D0C0008E1A9C /* SignUpViewController.swift in Sources */,
@@ -404,7 +400,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -418,7 +415,10 @@
 				DEVELOPMENT_TEAM = 535VJAU38N;
 				INFOPLIST_FILE = Sync/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = CS371L.Sync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -435,7 +435,10 @@
 				DEVELOPMENT_TEAM = 535VJAU38N;
 				INFOPLIST_FILE = Sync/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = CS371L.Sync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -465,6 +468,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		010CAC1725508F60003C8BB7 /* RemoteSwiftPackageReference */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCVersionGroup section */
 		013C22D7253F3D0700B86C3D /* Sync.xcdatamodeld */ = {

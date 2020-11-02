@@ -10,6 +10,9 @@ target 'Sync' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'FBSDKCoreKit'
+   pod 'FBSDKLoginKit'
+   pod 'FBSDKShareKit'
   
   # add pods for desired Firebase products
   # https://firebase.google.com/docs/ios/setup#available-pods
