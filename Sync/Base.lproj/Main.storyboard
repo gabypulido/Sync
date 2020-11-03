@@ -1000,7 +1000,7 @@
             </objects>
             <point key="canvasLocation" x="513" y="142"/>
         </scene>
-        <!--Change Password-->
+        <!--Reset Password-->
         <scene sceneID="CW1-zL-ngz">
             <objects>
                 <viewController storyboardIdentifier="ChangePassVC" modalPresentationStyle="fullScreen" id="Igz-qb-3JL" customClass="ResetPasswordLoggedInViewController" customModule="Sync" customModuleProvider="target" sceneMemberID="viewController">
@@ -1064,7 +1064,7 @@
                             <constraint firstItem="Ryh-2T-Pu1" firstAttribute="centerX" secondItem="nuS-sx-fdV" secondAttribute="centerX" id="x5q-DY-nmj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Change Password" id="vPO-OP-Olu"/>
+                    <navigationItem key="navigationItem" title="Reset Password" id="vPO-OP-Olu"/>
                     <connections>
                         <outlet property="newPassword" destination="Ryh-2T-Pu1" id="VBi-Ju-AMq"/>
                         <outlet property="reset" destination="DPt-q1-HE0" id="8bf-8Q-dza"/>
