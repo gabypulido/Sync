@@ -216,7 +216,7 @@
                                     <action selector="buttonPressed:" destination="L2o-YL-fH5" eventType="touchUpInside" id="tl7-Ch-1es"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOa-K2-FgT" customClass="FBSDKLoginButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOa-K2-FgT">
                                 <rect key="frame" x="37" y="516" width="340" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.65098039220000004" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -231,6 +231,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="L2o-YL-fH5" eventType="touchUpInside" id="T3g-d8-kgo"/>
+                                    <action selector="facebookLoginButtonPressed:" destination="4xG-69-LgW" eventType="touchUpInside" id="nxG-Jx-qm2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcZ-0l-r9c">
@@ -335,7 +336,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="pAW-4c-obp"/>
                     <connections>
-                        <outlet property="facebook" destination="qOa-K2-FgT" id="Ors-pW-tqb"/>
+                        <outlet property="facebook" destination="qOa-K2-FgT" id="Ecr-OX-1dk"/>
                         <outlet property="instagram" destination="wcZ-0l-r9c" id="oMq-u9-xJW"/>
                         <outlet property="linkedin" destination="4z6-O9-iWq" id="gWK-bZ-Uqb"/>
                         <outlet property="twitter" destination="uxm-1r-PEn" id="HS7-eW-OED"/>
