@@ -1,43 +1,46 @@
 //
-//  ChangePasswordViewController.swift
+//  ResetPasswordLoggedInViewController.swift
 //  Sync
 //
-//  Created by Audrey Chung on 10/22/20.
+//  Created by Maria Maynard on 11/3/20.
 //  Copyright © 2020 Gabriela Pulido. All rights reserved.
 //
 
 import UIKit
 import FirebaseAuth
 
-class ChangePasswordViewController: UIViewController {
-    
-    @IBOutlet weak var email: UITextField!
+class ResetPasswordLoggedInViewController: UIViewController {
+
+ 
     @IBOutlet weak var reset: UIButton!
+    @IBOutlet weak var newPassword: UITextField!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
     
     override func viewWillAppear(_ animated: Bool) {
-        email.borderStyle = UITextField.BorderStyle.roundedRect
+        newPassword.borderStyle = UITextField.BorderStyle.roundedRect
         reset.layer.cornerRadius = 10
         reset.clipsToBounds = true
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     @IBAction func resetPassword(_ sender: Any) {
-        guard let emailText = email.text,
-              emailText.count > 0
+        guard let passwordText = newPassword.text,
+              passwordText.count > 0
         else {
             let alert = UIAlertController(
               title: "Reset failed",
-              message: "Please check the fields and try again."
+              message: "Please type a new password."
             ,
               preferredStyle: .alert)
             alert.addAction(UIAlertAction(title:"OK",style:.default))
             self.present(alert, animated: true, completion: nil)
             return
         }
-        Auth.auth().sendPasswordReset(withEmail: emailText) { error in
+        Auth.auth().currentUser?.updatePassword(to: newPassword.text!) { (error) in
             if let error = error {
                 let alert = UIAlertController(
                   title: "Reset failed",
@@ -47,8 +50,8 @@ class ChangePasswordViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             } else {
                 let alert = UIAlertController(
-                  title: "Email Sent",
-                  message: "Check your inbox to reset your password."
+                  title: "Password Reset",
+                  message: "Your password has been changed."
                 ,
                   preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title:"OK",style:.default))
@@ -56,5 +59,4 @@ class ChangePasswordViewController: UIViewController {
             }
         }
     }
-    
 }

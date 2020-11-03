@@ -57,11 +57,19 @@ class SignUpViewController: UIViewController {
             return
         }
         Auth.auth().createUser(withEmail: emailText, password: passwordText) { user, error in
-            if error == nil {
+            if let error = error, user == nil {
+                let alert = UIAlertController(
+                  title: "Sign up failed",
+                  message: error.localizedDescription,
+                  preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title:"OK",style:.default))
+                self.present(alert, animated: true, completion: nil)
+            } else {
                 Auth.auth().signIn(withEmail: emailText,
                                    password: passwordText)
                 self.performSegue(withIdentifier: "signupSegueIdentifier", sender: nil)
             }
+            
         }
     }
 }
