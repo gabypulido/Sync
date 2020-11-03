@@ -36,6 +36,7 @@ class OptInViewController: UIViewController {
 
     @IBAction func facebookLoginButtonPressed(_ sender: Any) {
         let fbLoginManager : LoginManager = LoginManager()
+        if(AccessToken.current == nil){
         fbLoginManager.logIn(permissions: ["email"], from: self) { (result, error) -> Void in
             if (error == nil){
                 let fbloginresult : LoginManagerLoginResult = result!
@@ -46,10 +47,14 @@ class OptInViewController: UIViewController {
               if(fbloginresult.grantedPermissions.contains("email"))
               {
                 self.getFBUserData()
+                self.facebook.setTitle("Log out of Facebook", for: .normal)
               }
             }
         }
-              
+        }else{
+            fbLoginManager.logOut()
+            self.facebook.setTitle("Sign into Facebook", for: .normal)
+        }
     }
     
     func getFBUserData(){
