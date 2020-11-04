@@ -214,6 +214,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="L2o-YL-fH5" eventType="touchUpInside" id="tl7-Ch-1es"/>
+                                    <action selector="twitterLoginButtonPressed:" destination="4xG-69-LgW" eventType="touchUpInside" id="sDr-Ah-Q7P"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOa-K2-FgT">

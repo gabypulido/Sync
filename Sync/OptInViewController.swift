@@ -8,6 +8,8 @@
 
 import UIKit
 import FBSDKLoginKit
+import SafariServices
+import TwitterKit
 
 class OptInViewController: UIViewController {
 
@@ -18,9 +20,8 @@ class OptInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+            }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -34,6 +35,28 @@ class OptInViewController: UIViewController {
         linkedin.clipsToBounds = true
     }
 
+    @IBAction func twitterLoginButtonPressed(_ sender: Any) {
+        TWTRTwitter.sharedInstance().logIn { session, error in
+                if (session != nil)
+                {
+                    print("signed in as \(session!.userName)");
+                    let client = TWTRAPIClient.withCurrentUser()
+                    let request = client.urlRequest(withMethod: "GET",
+                                                    urlString: "https://api.twitter.com/1.1/account/verify_credentials.json",
+                        parameters: ["include_email": "true", "skip_status": "true"],
+                        error: nil)
+                    client.sendTwitterRequest(request)
+                    { response, data, connectionError in
+                        print(response)
+                    }
+                }
+                else
+                {
+                    print("error: \(error!.localizedDescription)");
+                }
+                }
+    }
+    
     @IBAction func facebookLoginButtonPressed(_ sender: Any) {
         let fbLoginManager : LoginManager = LoginManager()
         if(AccessToken.current == nil){
@@ -68,6 +91,8 @@ class OptInViewController: UIViewController {
       }
     }
     }
+
+
     /*
     // MARK: - Navigation
 

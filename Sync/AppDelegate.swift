@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Firebase
 import FBSDKCoreKit
+import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     application,
                     didFinishLaunchingWithOptions: launchOptions
                 )
+        TWTRTwitter.sharedInstance().start(withConsumerKey: "yG0es9HiAi8vmkMtpKApNkVsw", consumerSecret: "RAg7wBxPOWk07utxWY9aPbUDEz4ROf23HetzuwcljmsgKQcCVT")
         return true
     }
     
@@ -44,7 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
                 annotation: options[UIApplication.OpenURLOptionsKey.annotation]
             )
-
+        let twtrHandled = TWTRTwitter.sharedInstance().application(app, open: url, options: options)
+            return twtrHandled
         }  
 
     func applicationWillResignActive(_ application: UIApplication) {
