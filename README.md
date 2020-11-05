@@ -38,4 +38,21 @@ Differences:
 - It's difficult to see the social media opt in view & the icon spacing is off. This is exclusively because of wip difficulties with the settings side bar. If accessed directly, it performs & looks exactly as intended!
 - In our proposal we stated that there would be only an "admin login" in our alpha release. This was before we knew how to authenticate users using firebase, so we went ahead and set up a normal login system with no admin account.
 
+Beta Release
+-------------
+
+Contributions:
+
+Maria Maynard:
+
+Gabriela Pulido:
+
+Ji-Young Seo:
+
+Audrey Chung:
+
+Ji-Young Seo:
+
+Differences:
+
 
