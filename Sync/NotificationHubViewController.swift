@@ -25,7 +25,7 @@ class SocialMediaTableViewCell: UITableViewCell {
     
 }
 
-class NotificationHubViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITableViewDragDelegate, UIViewControllerTransitioningDelegate {
+class NotificationHubViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITableViewDragDelegate {
     
     var socialMedia: [String] = ["Twitter", "Instagram", "LinkedIn", "Facebook", ]
     var twitterNotifications = [Notification(body: "Twitter Test", time: "time")]
