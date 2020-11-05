@@ -35,7 +35,8 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
     var sections = [Category]()
     
     let transiton = MenuTransition()
-    var topView: UIView?
+    //0 - opening settings, 1 - settings open, 2 - social opt open, 3 - change pass open
+    var topView = 0
     
     @IBOutlet weak var notificationHubTable: UITableView!{
         didSet {
@@ -53,6 +54,7 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         sections = [Category(name: "Twitter", items: twitterNotifications), Category(name: "Instagram", items: instagramNotifications), Category(name: "LinkedIn", items: linkedInNotifications), Category(name: "Facebook", items: facebookNotifications)]
         notificationHubTable.backgroundColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
         self.view.backgroundColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
+        definesPresentationContext = true
         }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -129,40 +131,73 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         self.sections.insert(mover, at: destinationIndexPath.section)
     }
 
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+            topView = 0
+            dismiss(animated: true, completion: nil)
+        }
     
-//    @IBAction func hamTapped(_ sender: Any) {
-//        guard let settingsViewController = storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as? SettingsViewController else { return }
-//        settingsViewController.didTapMenuType = { menuType in
-//            self.transitionToNew(menuType)
-//        }
-//        settingsViewController.modalPresentationStyle = .overCurrentContext
-//        settingsViewController.transitioningDelegate = self
-//        present(settingsViewController, animated: true)
-//    }
+    //0 - opening settings, 1 - settings open, 2 - social opt open, 3 - change pass open
+    @IBAction func hamTapped(_ sender: Any) {
+        //first time opening settings
+        if topView == 0 {
+            guard let settingsViewController = storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as? SettingsViewController else { return }
+            
+            let tap = UITapGestureRecognizer(target: self, action:    #selector(self.handleTap(_:)))
+            transiton.dimmingView.addGestureRecognizer(tap)
+            
+             settingsViewController.didTapMenuType = { menuType in
+                self.transitionToNew(menuType)
+            }
+            topView = 1
+            settingsViewController.modalPresentationStyle = .overCurrentContext
+            settingsViewController.transitioningDelegate = self
+            present(settingsViewController, animated: true)
+        } else if topView > 0 { //then need to close
+            handleTap()
+        } else {
+            print("Error hamTapped")
+        }
 
-//    func transitionToNew(_ menuType: MenuType) {
-//
-//        topView?.removeFromSuperview()
-//        switch menuType {
-//        case .addSocial:
+    }
+
+    func transitionToNew(_ menuType: MenuType) {
+        switch menuType {
+        case .addSocial:
+            topView = 2
+            guard let socialVC = storyboard?.instantiateViewController(withIdentifier: "optSocialVC") as? OptInViewController else { return }
+            socialVC.modalPresentationStyle = .overCurrentContext
+            socialVC.transitioningDelegate = self
+            present(socialVC, animated: true)
+//            let view = UIView()
 //            let socialVC = OptInViewController()
-//            view.addSubview(socialVC.view)
+//            view.addSubview(socialVC.view)ßßß
 //            self.topView = socialVC.view
 //            addChildViewController(socialVC)
 //
+//            socialVC.modalPresentationStyle = .overCurrentContext
+//            socialVC.transitioningDelegate = self
+//            present(socialVC, animated: true)
+        case .passReset:
+            topView = 3
+            guard let passVC = storyboard?.instantiateViewController(withIdentifier: "changePassVC") as? ResetPasswordLoggedInViewController else { return }
+            passVC.modalPresentationStyle = .overCurrentContext
+            passVC.transitioningDelegate = self
+            present(passVC, animated: true)
+            
 ////            let view = UIView()
-////            view.frame = self.view.bounds
-////            self.view.addSubview(view)
-////            self.topView = view
-//        case .passReset:
-//            let view = UIView()
-//            view.frame = self.view.bounds
-//            self.view.addSubview(view)
-//            self.topView = view
-//        default:
-//            break
-//        }
-//    }
+//            let passVC = ChangePasswordViewController()
+////            view.addSubview(passVC.view)
+//            self.topView = passVC.view
+////            addChildViewController(passVC)
+//
+//            passVC.modalPresentationStyle = .overCurrentContext
+//            passVC.transitioningDelegate = self
+//            present(passVC, animated: true)
+        default:
+            break
+        }
+    }
+    
 
 }
 

@@ -19,6 +19,7 @@
 		019AE00B253602740072E2E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019AE00A253602740072E2E0 /* Assets.xcassets */; };
 		019AE00E253602740072E2E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019AE00C253602740072E2E0 /* LaunchScreen.storyboard */; };
 		01E092EB253E0EF300C86A29 /* NotificationHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E092EA253E0EF200C86A29 /* NotificationHubViewController.swift */; };
+		4D5D65AF076F02A68CE96C4D /* Pods_Sync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C1765D196BA0B5F93AE0CB /* Pods_Sync.framework */; };
 		5C0035F12551F7F800B1F5DB /* ResetPasswordLoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0035F02551F7F800B1F5DB /* ResetPasswordLoggedInViewController.swift */; };
 		5CE608FC254299570061F10E /* README.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5CE608FB254299570061F10E /* README.pdf */; };
 		5CE90EC42540D0C0008E1A9C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE90EC32540D0C0008E1A9C /* SignUpViewController.swift */; };
@@ -28,7 +29,6 @@
 		A3FF5D3525422E3C0079BC1A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF5D3425422E3B0079BC1A /* SettingsViewController.swift */; };
 		A3FF5D382542337F0079BC1A /* MenuTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF5D372542337F0079BC1A /* MenuTransition.swift */; };
 		A3FF5D3B254246440079BC1A /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF5D3A254246440079BC1A /* ChangePasswordViewController.swift */; };
-		F58BD70C946B75878B26391A /* Pods_Sync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B3CC03AC313BEBCAACCFA0 /* Pods_Sync.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,18 +46,18 @@
 		019AE00D253602740072E2E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		019AE00F253602740072E2E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01E092EA253E0EF200C86A29 /* NotificationHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHubViewController.swift; sourceTree = "<group>"; };
-		3D13C4E105AC3F2B910F2A26 /* Pods-Sync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync.debug.xcconfig"; path = "Target Support Files/Pods-Sync/Pods-Sync.debug.xcconfig"; sourceTree = "<group>"; };
+		4832053D81E00000AD14D378 /* Pods-Sync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync.release.xcconfig"; path = "Target Support Files/Pods-Sync/Pods-Sync.release.xcconfig"; sourceTree = "<group>"; };
 		5C0035F02551F7F800B1F5DB /* ResetPasswordLoggedInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordLoggedInViewController.swift; sourceTree = "<group>"; };
 		5CE608FB254299570061F10E /* README.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = README.pdf; sourceTree = "<group>"; };
 		5CE90EC32540D0C0008E1A9C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5CE90ECA2541085D008E1A9C /* OptInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptInViewController.swift; sourceTree = "<group>"; };
 		5CE90EE525411E80008E1A9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		763A8E7691F23A6653957957 /* Pods-Sync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync.release.xcconfig"; path = "Target Support Files/Pods-Sync/Pods-Sync.release.xcconfig"; sourceTree = "<group>"; };
+		7FEB4A87B96CB5F402706C8D /* Pods-Sync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync.debug.xcconfig"; path = "Target Support Files/Pods-Sync/Pods-Sync.debug.xcconfig"; sourceTree = "<group>"; };
 		A0245C33254143140031E0DD /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		A3FF5D3425422E3B0079BC1A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A3FF5D372542337F0079BC1A /* MenuTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTransition.swift; sourceTree = "<group>"; };
 		A3FF5D3A254246440079BC1A /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
-		D2B3CC03AC313BEBCAACCFA0 /* Pods_Sync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4C1765D196BA0B5F93AE0CB /* Pods_Sync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F58BD70C946B75878B26391A /* Pods_Sync.framework in Frameworks */,
+				4D5D65AF076F02A68CE96C4D /* Pods_Sync.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +78,7 @@
 				019ADFFF253602740072E2E0 /* Sync */,
 				019ADFFE253602740072E2E0 /* Products */,
 				A8A014D1C50519CDC4C6F429 /* Pods */,
-				6CCD28C6A282C16F687A5463 /* Frameworks */,
+				99038923585FF7B0F116EA65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,10 +119,10 @@
 			path = Sync;
 			sourceTree = "<group>";
 		};
-		6CCD28C6A282C16F687A5463 /* Frameworks */ = {
+		99038923585FF7B0F116EA65 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D2B3CC03AC313BEBCAACCFA0 /* Pods_Sync.framework */,
+				F4C1765D196BA0B5F93AE0CB /* Pods_Sync.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -130,8 +130,8 @@
 		A8A014D1C50519CDC4C6F429 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3D13C4E105AC3F2B910F2A26 /* Pods-Sync.debug.xcconfig */,
-				763A8E7691F23A6653957957 /* Pods-Sync.release.xcconfig */,
+				7FEB4A87B96CB5F402706C8D /* Pods-Sync.debug.xcconfig */,
+				4832053D81E00000AD14D378 /* Pods-Sync.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -143,12 +143,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 019AE012253602740072E2E0 /* Build configuration list for PBXNativeTarget "Sync" */;
 			buildPhases = (
-				FFE11A06B3103A416075A4FB /* [CP] Check Pods Manifest.lock */,
+				F807732FB6BD29D0953CDDE5 /* [CP] Check Pods Manifest.lock */,
 				019ADFF9253602740072E2E0 /* Sources */,
 				019ADFFA253602740072E2E0 /* Frameworks */,
 				019ADFFB253602740072E2E0 /* Resources */,
-				3FC55C59E66B91768AD68E28 /* [CP] Embed Pods Frameworks */,
-				471E4FD7E1BE0300E0F900DF /* [CP] Copy Pods Resources */,
+				199AD1E615D77B778C6B235B /* [CP] Embed Pods Frameworks */,
+				3265EFEAB2D81074A23D828D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -212,41 +212,75 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3FC55C59E66B91768AD68E28 /* [CP] Embed Pods Frameworks */ = {
+		199AD1E615D77B778C6B235B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Sync/Pods-Sync-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sync/Pods-Sync-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseAuth/FirebaseAuth.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Sync/Pods-Sync-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseAuth.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sync/Pods-Sync-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		471E4FD7E1BE0300E0F900DF /* [CP] Copy Pods Resources */ = {
+		3265EFEAB2D81074A23D828D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Sync/Pods-Sync-resources-${CONFIGURATION}-input-files.xcfilelist",
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sync/Pods-Sync-resources.sh",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Sync/Pods-Sync-resources-${CONFIGURATION}-output-files.xcfilelist",
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sync/Pods-Sync-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FFE11A06B3103A416075A4FB /* [CP] Check Pods Manifest.lock */ = {
+		F807732FB6BD29D0953CDDE5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -426,13 +460,13 @@
 		};
 		019AE013253602740072E2E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D13C4E105AC3F2B910F2A26 /* Pods-Sync.debug.xcconfig */;
+			baseConfigurationReference = 7FEB4A87B96CB5F402706C8D /* Pods-Sync.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 535VJAU38N;
 				INFOPLIST_FILE = Sync/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -446,13 +480,13 @@
 		};
 		019AE014253602740072E2E0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 763A8E7691F23A6653957957 /* Pods-Sync.release.xcconfig */;
+			baseConfigurationReference = 4832053D81E00000AD14D378 /* Pods-Sync.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 535VJAU38N;
 				INFOPLIST_FILE = Sync/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
