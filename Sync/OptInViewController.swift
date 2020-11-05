@@ -39,7 +39,7 @@ class OptInViewController: UIViewController {
         TWTRTwitter.sharedInstance().logIn { session, error in
                 if (session != nil)
                 {
-                    print("signed in as \(session!.userName)");
+                    print("signed in as \(session!.userName)")
                     let client = TWTRAPIClient.withCurrentUser()
                     let request = client.urlRequest(withMethod: "GET",
                                                     urlString: "https://api.twitter.com/1.1/account/verify_credentials.json",
@@ -55,6 +55,16 @@ class OptInViewController: UIViewController {
                     print("error: \(error!.localizedDescription)");
                 }
                 }
+        if((TWTRTwitter.sharedInstance().sessionStore.session()?.userID) == nil)
+         {
+        //show twitter login button
+        print("nil")
+         }
+        else
+         {
+        //user has already logged in take appropriate action
+            print("not nil")
+        }
     }
     
     @IBAction func facebookLoginButtonPressed(_ sender: Any) {

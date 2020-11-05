@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TwitterKit
 
 struct Category {
    let name : String
@@ -53,7 +54,23 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         sections = [Category(name: "Twitter", items: twitterNotifications), Category(name: "Instagram", items: instagramNotifications), Category(name: "LinkedIn", items: linkedInNotifications), Category(name: "Facebook", items: facebookNotifications)]
         notificationHubTable.backgroundColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
         self.view.backgroundColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
+        
+        //API CALL, CAUSES CRASH
+//        if(TWTRTwitter.sharedInstance().sessionStore.session() != nil){
+//            print("user logge in")
+//            let client = TWTRAPIClient.withCurrentUser()
+//            let request = client.urlRequest(withMethod: "GET",
+//                                            urlString: "https://api.twitter.com/1.1/statuses/home_timeline.json",
+//                                            parameters: ["count": 20],
+//                error: nil)
+//            print("request made")
+//            client.sendTwitterRequest(request)
+//            { response, data, connectionError in
+//                print(response)
+//            }
+        //https://api.twitter.com/1.1/statuses/retweets_of_me.json
         }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
