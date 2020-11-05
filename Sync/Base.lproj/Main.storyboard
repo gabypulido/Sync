@@ -348,7 +348,7 @@
                     <barButtonItem key="leftBarButtonItem" title="Item" image="icons8-menu-50" id="wI3-zZ-eG3"/>
                 </navigationItem>
             </objects>
-            <point key="canvasLocation" x="1286" y="694"/>
+            <point key="canvasLocation" x="694" y="755"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZhM-dJ-EVu">
@@ -767,10 +767,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sync Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voY-Hn-0UU">
-                                            <rect key="frame" x="125" y="187" width="75" height="21"/>
+                                            <rect key="frame" x="125" y="187" width="79" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" red="0.98166698220000004" green="0.94534665350000002" blue="0.85577446219999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </label>
                                         <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e08-LI-qE6">
@@ -815,7 +815,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@Sync" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BcD-I0-XbN">
                                             <rect key="frame" x="56" y="14" width="56.333333333333343" height="22"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.37031507489999999" green="0.39466857910000003" blue="0.44464510680000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bge-Uj-Jgf">
@@ -862,7 +862,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Service +" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M42-QX-HI9">
                                             <rect key="frame" x="56" y="13" width="338" height="22"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.37031507489999999" green="0.39466857910000003" blue="0.44464510680000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -898,7 +898,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDH-iS-Dtj">
                                             <rect key="frame" x="16" y="28" width="378" height="22"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.37031507489999999" green="0.39466857910000003" blue="0.44464510680000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -930,7 +930,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydm-rp-sJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <barButtonItem title="Item" image="icons8-menu-50" id="rLP-Ad-NKn"/>
             </objects>
-            <point key="canvasLocation" x="366.66666666666669" y="200.89285714285714"/>
+            <point key="canvasLocation" x="-225" y="262"/>
         </scene>
         <!--Reset Password-->
         <scene sceneID="CW1-zL-ngz">
@@ -1004,7 +1004,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9tV-vZ-4mM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1286" y="7"/>
+            <point key="canvasLocation" x="694" y="68"/>
         </scene>
         <!--Change Password-->
         <scene sceneID="xmQ-q3-YbZ">
