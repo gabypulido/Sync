@@ -56,24 +56,6 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         notificationHubTable.backgroundColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
         self.view.backgroundColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
         
-        //API CALL
-        if(TWTRTwitter.sharedInstance().sessionStore.session() != nil){
-            print("user logge in")
-            let client = TWTRAPIClient.withCurrentUser()
-            let request = client.urlRequest(withMethod: "GET",
-                                            urlString: "https://api.twitter.com/1.1/statuses/home_timeline.json",
-                                            parameters: ["count": "20"],
-                error: nil)
-
-            client.sendTwitterRequest(request)
-            { response, data, connectionError in
-                let json = try? JSONSerialization.jsonObject(with: data!, options: [])
-                if let JSONString = String(data: data!, encoding: String.Encoding.utf8) {
-                   print(JSONString)
-                }
-            }
-        //https://api.twitter.com/1.1/statuses/retweets_of_me.json
-        }
         definesPresentationContext = true
 
         }
@@ -123,6 +105,26 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
             self.performSegue(withIdentifier: "FacebookChannelSegue", sender: self)
             default:
                 print("default")
+        }
+    }
+    
+    /*I moved this if statement from ViewDidLoad to its own function, it prints out a super long JSON string with recent users retweets*/
+    func getTwitterNotifications(){
+        if(TWTRTwitter.sharedInstance().sessionStore.session() != nil){
+            //Get recent retweets
+            let client = TWTRAPIClient.withCurrentUser()
+            let request = client.urlRequest(withMethod: "GET",
+                                            urlString: "https://api.twitter.com/1.1/statuses/retweets_of_me.json",
+                                            parameters: ["count": "20"],
+                error: nil)
+            client.sendTwitterRequest(request)
+            { response, data, connectionError in
+                let json = try? JSONSerialization.jsonObject(with: data!, options: [])
+                if let JSONString = String(data: data!, encoding: String.Encoding.utf8) {
+                   print(JSONString)
+                }
+                
+            }
         }
     }
     
