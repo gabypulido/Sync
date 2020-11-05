@@ -16,7 +16,7 @@ enum MenuType: String {
     case passReset
 }
 
-public let dataSource = [ "Guy Fieri","Social Media Opt In", "@GuyFieri", "Add a Service +", "Change Password"]
+public let dataSource = [ "Sync Test","Social Media Opt In", "@Sync", "Add a Service +", "Change Password"]
 
 class FirstTableCell: UITableViewCell {
     @IBOutlet weak var profPic: UIImageView!
@@ -25,12 +25,15 @@ class FirstTableCell: UITableViewCell {
 
 class SecondTableCell: UITableViewCell {
     @IBOutlet weak var txtLbl: UILabel!
-    
 }
 
 class ThirdTableCell: UITableViewCell {
     @IBOutlet weak var icon: UIImageView!
-    @IBOutlet weak var profTag: UILabel!
+    @IBOutlet weak var profileTag: UILabel!
+}
+
+class FourthTableCell: UITableViewCell {
+    @IBOutlet weak var addServiceLabel: UILabel!
 }
 
 class SettingsViewController: UITableViewController {
@@ -39,50 +42,52 @@ class SettingsViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.estimatedRowHeight = 68.0
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
-//    //    instead of making a new cell everytime, you deque a reusable one.
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return dataSource.count
-//    }
-//
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if indexPath.row == 0 {
-//           let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell") as! FirstTableCell
-//           cell.username.text = dataSource[0]
-//           return cell
-//        } else if indexPath.row == 1 {
-//           let cell = tableView.dequeueReusableCell(withIdentifier: "optInTitleCell") as! SecondTableCell
-//           //cell.txtLbl.text = dataSource[1]
-//            //cell.txtLbl.text = "cow"
-//           return cell
-//        } else if indexPath.row ==  dataSource.count - 2 {
-//           let cell = tableView.dequeueReusableCell(withIdentifier: "optInCell") as! ThirdTableCell
-//           //cell.icon.image = UIImage(named: "twitter-64")
-//           //cell.profTag.text = dataSource[dataSource.count - 2]
-//            //cell.profTag.text = "light"
-//           return cell
-//        } else if indexPath.row ==  dataSource.count - 1 {
-//           let cell = tableView.dequeueReusableCell(withIdentifier: "changePassCell") as! SecondTableCell
-//           //cell.txtLbl.text = dataSource[dataSource.count - 1]
-//            //cell.txtLbl.text = "row"
-//           return cell
-//        } else {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "twittercell") as! ThirdTableCell
-//            //cell.icon.image = UIImage(named: "twitter-64")
-//            //cell.profTag.text = dataSource[indexPath.row]
-//            //cell.profTag.text = "no"
-//            return cell
-//        }
-////
-////        let cell = tableView.dequeueReusableCell(withIdentifier: "optInCells", for: indexPath as IndexPath)
-////
-////        let row = indexPath.row
-////        cell.textLabel?.text = dataSource[row]
-////
-////        return cell
-//    }
-//
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+         return UITableViewAutomaticDimension
+    }
+    
+    //    instead of making a new cell everytime, you deque a reusable one.
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+           let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell") as! FirstTableCell
+            cell.profPic.sizeToFit()
+            cell.username.text = dataSource[0]
+            cell.username.sizeToFit()
+           return cell
+        } else if indexPath.row == 1 {
+           let cell = tableView.dequeueReusableCell(withIdentifier: "changePassCell") as! SecondTableCell
+            cell.txtLbl.text = dataSource[1]
+            cell.txtLbl.sizeToFit()
+            cell.isUserInteractionEnabled = false
+           return cell
+        } else if indexPath.row ==  dataSource.count - 2 {
+           let cell = tableView.dequeueReusableCell(withIdentifier: "optInCell") as! FourthTableCell
+            cell.addServiceLabel.text = dataSource[dataSource.count - 2]
+            cell.addServiceLabel.sizeToFit()
+           return cell
+        } else if indexPath.row ==  dataSource.count - 1 {
+           let cell = tableView.dequeueReusableCell(withIdentifier: "changePassCell") as! SecondTableCell
+            cell.txtLbl.text = dataSource[dataSource.count - 1]
+            cell.txtLbl.sizeToFit()
+           return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "twittercell") as! ThirdTableCell
+            cell.icon.image = UIImage(named: "twitter-64")
+            //cell.icon.sizeToFit()
+            cell.profileTag.text = dataSource[indexPath.row]
+            cell.profileTag.sizeToFit()
+            return cell
+        }
+    }
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
         var menuType: MenuType!
 
