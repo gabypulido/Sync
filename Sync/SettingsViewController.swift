@@ -42,15 +42,27 @@ class SettingsViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.estimatedRowHeight = 68.0
-        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.estimatedRowHeight = UITableViewAutomaticDimension
+//        tableView.rowHeight = UITableViewAutomaticDimension
+//        self.tableView.setNeedsLayout()
+//        self.tableView.layoutIfNeeded()
+//        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-         return UITableViewAutomaticDimension
+        if indexPath.row == 0 {
+           return CGFloat(241)
+        } else if indexPath.row == 1 {
+           return CGFloat(81)
+        } else if indexPath.row ==  dataSource.count - 2 {
+           return CGFloat(50)
+        } else if indexPath.row ==  dataSource.count - 1 {
+           return CGFloat(81)
+        } else {
+            return CGFloat(50)
+        }
     }
     
-    //    instead of making a new cell everytime, you deque a reusable one.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
     }
@@ -58,7 +70,7 @@ class SettingsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
            let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell") as! FirstTableCell
-            cell.profPic.sizeToFit()
+            cell.profPic.image = UIImage(named: "120620519_777256209718165_3142639425989673168_n.jpg")
             cell.username.text = dataSource[0]
             cell.username.sizeToFit()
            return cell
