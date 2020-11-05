@@ -25,7 +25,7 @@ class SocialMediaTableViewCell: UITableViewCell {
     
 }
 
-class NotificationHubViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITableViewDragDelegate {
+class NotificationHubViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITableViewDragDelegate, UIViewControllerTransitioningDelegate {
     
     var socialMedia: [String] = ["Twitter", "Instagram", "LinkedIn", "Facebook", ]
     var twitterNotifications = [Notification(body: "Twitter Test", time: "time")]
@@ -36,7 +36,8 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
     var sections = [Category]()
     
     let transiton = MenuTransition()
-    var topView: UIView?
+    //0 - opening settings, 1 - settings open, 2 - social opt open, 3 - change pass open
+    var topView = 0
     
     @IBOutlet weak var notificationHubTable: UITableView!{
         didSet {
@@ -69,8 +70,10 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
 //                print(response)
 //            }
         //https://api.twitter.com/1.1/statuses/retweets_of_me.json
+        definesPresentationContext = true
+
         }
-    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -146,40 +149,57 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         self.sections.insert(mover, at: destinationIndexPath.section)
     }
 
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+            topView = 0
+            self.title = "Channels"
+            dismiss(animated: true, completion: nil)
+        }
     
-//    @IBAction func hamTapped(_ sender: Any) {
-//        guard let settingsViewController = storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as? SettingsViewController else { return }
-//        settingsViewController.didTapMenuType = { menuType in
-//            self.transitionToNew(menuType)
-//        }
-//        settingsViewController.modalPresentationStyle = .overCurrentContext
-//        settingsViewController.transitioningDelegate = self
-//        present(settingsViewController, animated: true)
-//    }
+    //0 - opening settings, 1 - settings open, 2 - social opt open, 3 - change pass open
+    @IBAction func hamTapped(_ sender: Any) {
+        //opening settings
+        if topView == 0 {
+            guard let settingsViewController = storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as? SettingsViewController else { return }
+            
+            let tap = UITapGestureRecognizer(target: self, action:    #selector(self.handleTap(_:)))
+            transiton.dimmingView.addGestureRecognizer(tap)
+            
+             settingsViewController.didTapMenuType = { menuType in
+                self.transitionToNew(menuType)
+            }
+            topView = 1
+            self.title = "Settings"
+            settingsViewController.modalPresentationStyle = .overCurrentContext
+            settingsViewController.transitioningDelegate = self
+            present(settingsViewController, animated: true)
+        } else if topView > 0 { //then need to close
+            handleTap()
+        } else {
+            print("Error hamTapped")
+        }
 
-//    func transitionToNew(_ menuType: MenuType) {
-//
-//        topView?.removeFromSuperview()
-//        switch menuType {
-//        case .addSocial:
-//            let socialVC = OptInViewController()
-//            view.addSubview(socialVC.view)
-//            self.topView = socialVC.view
-//            addChildViewController(socialVC)
-//
-////            let view = UIView()
-////            view.frame = self.view.bounds
-////            self.view.addSubview(view)
-////            self.topView = view
-//        case .passReset:
-//            let view = UIView()
-//            view.frame = self.view.bounds
-//            self.view.addSubview(view)
-//            self.topView = view
-//        default:
-//            break
-//        }
-//    }
+    }
+
+    func transitionToNew(_ menuType: MenuType) {
+        switch menuType {
+        case .addSocial:
+            topView = 2
+            guard let socialVC = storyboard?.instantiateViewController(withIdentifier: "optSocialVC") as? OptInViewController else { return }
+            socialVC.modalPresentationStyle = .overCurrentContext
+            socialVC.transitioningDelegate = self
+            self.title = "Media Sign-In"
+            present(socialVC, animated: true)
+        case .passReset:
+            topView = 3
+            guard let passVC = storyboard?.instantiateViewController(withIdentifier: "changePassVC") as? ResetPasswordLoggedInViewController else { return }
+            passVC.modalPresentationStyle = .overCurrentContext
+            passVC.transitioningDelegate = self
+            self.title = "Change Password"
+            present(passVC, animated: true)
+        default:
+            break
+        }
+    }
 
 }
 
