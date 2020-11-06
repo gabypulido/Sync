@@ -8,11 +8,17 @@
 
 import UIKit
 
-class TwitterChannelViewController: UIViewController {
+class TwitterChannelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var twitterNotificationTable: UITableView!
+    @IBOutlet weak var twitterNotificationTable: UITableView!{
+        didSet {
+            twitterNotificationTable.dataSource = self
+            twitterNotificationTable.delegate = self
+        }
+    }
     
     var delegate: UIViewController!
+    //var notifications: [Notification]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +26,20 @@ class TwitterChannelViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //change to number of notifs
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell") as! UITableViewCell
+        cell.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
+        return cell
+    }
+    
 
     /*
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.

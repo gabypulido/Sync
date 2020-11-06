@@ -71,13 +71,16 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell") as! SocialMediaTableViewCell
-        let items = self.sections[indexPath.section].items
         cell.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
         switch sections[indexPath.section].name {
         case "Twitter":
-//            let notification = self.twitterNotifications[0]
-//            cell.notificationBody.text = "Your tweet \(notification.body) was retweeted."
+            if(twitterNotifications.count != 0){
+                let notification = self.twitterNotifications[0]
+                cell.notificationBody.text = "Your tweet \(notification.body) was retweeted."
+                print("in if")
+            }
             print("count \(self.twitterNotifications.count)")
+            
             cell.socialIcon.image = UIImage(named: "twitter-64")
             
         case "Instagram":
@@ -133,7 +136,7 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
                         print("jeson \(jsonResult[0])")
                         let newRetweet = Notification(body: dict!["text"]! as! String, time: "", notificationType: "Retweet")
                         self.twitterNotifications.append(newRetweet)
-                        print("appended new retweet")
+                        self.notificationHubTable.reloadData()
                     }
                 } else {
                     // couldn't load JSON, look at error
@@ -239,10 +242,14 @@ extension NotificationHubViewController: UIViewControllerTransitioningDelegate {
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
+     
      */
-    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "TwitterChannelSegue",
+//            let nextVC = segue.destination as? TwitterChannelViewController
+//        {
+//            nextVC.delegate = self
+//            //nextVC.notifications = twitterNotifications
+//        }
+//    }
 }
