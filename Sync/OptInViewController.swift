@@ -64,6 +64,7 @@ class OptInViewController: UIViewController {
          {
         //user has already logged in take appropriate action
             print("not nil")
+            self.twitter.setTitle("Log out of twitter", for: .normal)
         }
     }
     
