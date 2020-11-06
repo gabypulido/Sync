@@ -126,9 +126,12 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
                 let jsonResult: NSArray! = try? JSONSerialization.jsonObject(with: data!, options:[]) as! NSArray
 
                     if (jsonResult != nil) {
+                        let dict = jsonResult[0] as? NSDictionary
                         // process jsonResult
                         print("json 0 \(jsonResult.count)" )
                         print("jeson \(jsonResult[0])")
+                        var text = dict!["text"]!
+                        print("would this work ? \(text)")
                     } else {
                        // couldn't load JSON, look at error
                     }
