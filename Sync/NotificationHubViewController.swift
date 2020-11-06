@@ -55,7 +55,7 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         sections = [Category(name: "Twitter", items: twitterNotifications), Category(name: "Instagram", items: instagramNotifications), Category(name: "LinkedIn", items: linkedInNotifications), Category(name: "Facebook", items: facebookNotifications)]
         notificationHubTable.backgroundColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
         self.view.backgroundColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
-        
+        getTwitterNotifications()
         definesPresentationContext = true
 
         }
@@ -123,7 +123,15 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
                 if let JSONString = String(data: data!, encoding: String.Encoding.utf8) {
                    print(JSONString)
                 }
-                
+                let jsonResult: NSArray! = try? JSONSerialization.jsonObject(with: data!, options:[]) as! NSArray
+
+                    if (jsonResult != nil) {
+                        // process jsonResult
+                        print("json 0 \(jsonResult.count)" )
+                        print("jeson \(jsonResult[0])")
+                    } else {
+                       // couldn't load JSON, look at error
+                    }
             }
         }
     }
