@@ -17,10 +17,10 @@ Gabriela Pulido (Release 25% Overall 25%):
 - Pulling twitter notifications for retweets.
  
 Ji-Young Seo (Release 25% Overall 25%):
-- Splash screen
-- Log in screen that authenticates using firebase.
-- Research on pulling notifications.
-	- Ji-Young did a lot of the digging around pulling from fb, instagram, and messenger notifications, and as such she encountered a lot of roadblocks. She implemented the workaround method described below in the Differences section.
+- Splash screen with custom logo
+- Log in screen that authenticates using firebase
+- Instagram channel table view: attempted to connect to Instagram/Facebook APIs, as described in the Differences
+- Local notification pull: attempted to have a workaround, as described below, of pulling messages directly from iPhone notification center
  
 Audrey Chung  (Release 25% Overall 25%):
 - Settings Screen with dummy data
