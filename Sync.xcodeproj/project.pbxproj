@@ -19,7 +19,7 @@
 		019AE00B253602740072E2E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019AE00A253602740072E2E0 /* Assets.xcassets */; };
 		019AE00E253602740072E2E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019AE00C253602740072E2E0 /* LaunchScreen.storyboard */; };
 		01E092EB253E0EF300C86A29 /* NotificationHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E092EA253E0EF200C86A29 /* NotificationHubViewController.swift */; };
-		235EA4616AB720142946B107 /* Pods_Sync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC8891D9FE1CD56CA31D705C /* Pods_Sync.framework */; };
+		559C4CDD95D3A0FF85770C65 /* Pods_Sync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0319D0441BCD58AAB5D33155 /* Pods_Sync.framework */; };
 		5C0035F12551F7F800B1F5DB /* ResetPasswordLoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0035F02551F7F800B1F5DB /* ResetPasswordLoggedInViewController.swift */; };
 		5CE608FC254299570061F10E /* README.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5CE608FB254299570061F10E /* README.pdf */; };
 		5CE90EC42540D0C0008E1A9C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE90EC32540D0C0008E1A9C /* SignUpViewController.swift */; };
@@ -46,7 +46,9 @@
 		019AE00D253602740072E2E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		019AE00F253602740072E2E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01E092EA253E0EF200C86A29 /* NotificationHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHubViewController.swift; sourceTree = "<group>"; };
-		0CC215679C3B4D447AA6709B /* Pods-Sync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync.release.xcconfig"; path = "Target Support Files/Pods-Sync/Pods-Sync.release.xcconfig"; sourceTree = "<group>"; };
+		0319D0441BCD58AAB5D33155 /* Pods_Sync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ECC2F23814EE42425E3243D /* Pods-Sync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync.release.xcconfig"; path = "Target Support Files/Pods-Sync/Pods-Sync.release.xcconfig"; sourceTree = "<group>"; };
+		4ED3158ADA42FDEC68AC1086 /* Pods-Sync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync.debug.xcconfig"; path = "Target Support Files/Pods-Sync/Pods-Sync.debug.xcconfig"; sourceTree = "<group>"; };
 		5C0035F02551F7F800B1F5DB /* ResetPasswordLoggedInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordLoggedInViewController.swift; sourceTree = "<group>"; };
 		5CE608FB254299570061F10E /* README.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = README.pdf; sourceTree = "<group>"; };
 		5CE90EC32540D0C0008E1A9C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -56,8 +58,6 @@
 		A3FF5D3425422E3B0079BC1A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A3FF5D372542337F0079BC1A /* MenuTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTransition.swift; sourceTree = "<group>"; };
 		A3FF5D3A254246440079BC1A /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
-		BC8891D9FE1CD56CA31D705C /* Pods_Sync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDFBB595F6FEE2941388A730 /* Pods-Sync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync.debug.xcconfig"; path = "Target Support Files/Pods-Sync/Pods-Sync.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				235EA4616AB720142946B107 /* Pods_Sync.framework in Frameworks */,
+				559C4CDD95D3A0FF85770C65 /* Pods_Sync.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +78,7 @@
 				019ADFFF253602740072E2E0 /* Sync */,
 				019ADFFE253602740072E2E0 /* Products */,
 				A8A014D1C50519CDC4C6F429 /* Pods */,
-				0EEF786B7B3F45024F2F8656 /* Frameworks */,
+				1E17953AE4D266485D35F875 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,10 +119,10 @@
 			path = Sync;
 			sourceTree = "<group>";
 		};
-		0EEF786B7B3F45024F2F8656 /* Frameworks */ = {
+		1E17953AE4D266485D35F875 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BC8891D9FE1CD56CA31D705C /* Pods_Sync.framework */,
+				0319D0441BCD58AAB5D33155 /* Pods_Sync.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -130,8 +130,8 @@
 		A8A014D1C50519CDC4C6F429 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CDFBB595F6FEE2941388A730 /* Pods-Sync.debug.xcconfig */,
-				0CC215679C3B4D447AA6709B /* Pods-Sync.release.xcconfig */,
+				4ED3158ADA42FDEC68AC1086 /* Pods-Sync.debug.xcconfig */,
+				3ECC2F23814EE42425E3243D /* Pods-Sync.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -143,12 +143,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 019AE012253602740072E2E0 /* Build configuration list for PBXNativeTarget "Sync" */;
 			buildPhases = (
-				81D175CE1D8BB05A5AFD7F43 /* [CP] Check Pods Manifest.lock */,
+				A533CF38D86CFEC22121BAC0 /* [CP] Check Pods Manifest.lock */,
 				019ADFF9253602740072E2E0 /* Sources */,
 				019ADFFA253602740072E2E0 /* Frameworks */,
 				019ADFFB253602740072E2E0 /* Resources */,
-				AF980B65296259B41FBA9744 /* [CP] Embed Pods Frameworks */,
-				DEBE033E811EDEFF0B542861 /* [CP] Copy Pods Resources */,
+				F7E9732B2CC625FF3C89E3CF /* [CP] Embed Pods Frameworks */,
+				0CBFF8EC14A9B8BC8A5A7B6C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -212,7 +212,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		81D175CE1D8BB05A5AFD7F43 /* [CP] Check Pods Manifest.lock */ = {
+		0CBFF8EC14A9B8BC8A5A7B6C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sync/Pods-Sync-resources.sh",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sync/Pods-Sync-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A533CF38D86CFEC22121BAC0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -234,7 +252,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AF980B65296259B41FBA9744 /* [CP] Embed Pods Frameworks */ = {
+		F7E9732B2CC625FF3C89E3CF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -282,24 +300,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sync/Pods-Sync-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DEBE033E811EDEFF0B542861 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Sync/Pods-Sync-resources.sh",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sync/Pods-Sync-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -460,7 +460,7 @@
 		};
 		019AE013253602740072E2E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDFBB595F6FEE2941388A730 /* Pods-Sync.debug.xcconfig */;
+			baseConfigurationReference = 4ED3158ADA42FDEC68AC1086 /* Pods-Sync.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -480,7 +480,7 @@
 		};
 		019AE014253602740072E2E0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0CC215679C3B4D447AA6709B /* Pods-Sync.release.xcconfig */;
+			baseConfigurationReference = 3ECC2F23814EE42425E3243D /* Pods-Sync.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
