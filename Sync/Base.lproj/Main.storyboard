@@ -399,8 +399,8 @@
                                                             <rect key="frame" x="8" y="4" width="28" height="29"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notification Body" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkK-zg-xGy">
-                                                            <rect key="frame" x="44" y="46" width="131" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkK-zg-xGy">
+                                                            <rect key="frame" x="44" y="46" width="0.0" height="0.0"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" systemColor="systemGrayColor"/>
@@ -425,6 +425,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="notificationBody" destination="GkK-zg-xGy" id="ZxL-Dr-0dr"/>
+                                            <outlet property="notificationTime" destination="Lzs-7G-gMG" id="F2S-Nh-7LR"/>
                                             <outlet property="socialIcon" destination="quz-k6-Rb3" id="EGm-ZO-njs"/>
                                         </connections>
                                     </tableViewCell>

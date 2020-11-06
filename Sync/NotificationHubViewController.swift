@@ -9,26 +9,29 @@
 import UIKit
 import TwitterKit
 
+
 struct Category {
-   let name : String
-   var items : [Notification]
+    let name : String
+    var items : [Notification]
 }
 
 struct Notification {
     var body = String()
     var time = String()
+    var notificationType = String()
 }
 
 class SocialMediaTableViewCell: UITableViewCell {
     @IBOutlet weak var socialIcon: UIImageView!
-    
-    
+    @IBOutlet weak var notificationBody: UILabel!
+    @IBOutlet weak var notificationTime: UILabel!
 }
 
 class NotificationHubViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITableViewDragDelegate {
     
-    var socialMedia: [String] = ["Twitter", "Instagram", "LinkedIn", "Facebook", ]
-    var twitterNotifications = [Notification(body: "Twitter Test", time: "time")]
+    var twitterNotifications:[Notification] = []
+    
+    //DUMMY PLACEHOLDERS
     var instagramNotifications = [Notification(body: "Instagram Test", time: "time")]
     var linkedInNotifications = [Notification(body: "LinkedIn Test", time: "time")]
     var facebookNotifications = [Notification(body: "Facebook Test", time: "time")]
@@ -47,18 +50,19 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
             notificationHubTable.dragInteractionEnabled = true
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //tableCell.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
         // Do any additional setup after loading the view.
+        getTwitterNotifications()
         sections = [Category(name: "Twitter", items: twitterNotifications), Category(name: "Instagram", items: instagramNotifications), Category(name: "LinkedIn", items: linkedInNotifications), Category(name: "Facebook", items: facebookNotifications)]
         notificationHubTable.backgroundColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
         self.view.backgroundColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
-        getTwitterNotifications()
+        
         definesPresentationContext = true
-
-        }
+        
+    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -66,45 +70,42 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! SocialMediaTableViewCell
-//        cell.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
-//        let row = indexPath.row
-//        let socialMediaNetwork = socialMedia[row]
-//        cell.socialMediaNameLabel.text = socialMediaNetwork
-//
-//        return cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell") as! SocialMediaTableViewCell
         let items = self.sections[indexPath.section].items
         cell.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
         switch sections[indexPath.section].name {
-            case "Twitter":
-                cell.socialIcon.image = UIImage(named: "twitter-64")
-            case "Instagram":
-                cell.socialIcon.image = UIImage(named: "instagram-64")
-            case "LinkedIn":
-                cell.socialIcon.image = UIImage(named: "linkedin-3-64")
-            case "Facebook":
-                cell.socialIcon.image = UIImage(named: "facebook-3-64")
-            default:
-                print("Error")
+        case "Twitter":
+//            let notification = self.twitterNotifications[0]
+//            cell.notificationBody.text = "Your tweet \(notification.body) was retweeted."
+            print("count \(self.twitterNotifications.count)")
+            cell.socialIcon.image = UIImage(named: "twitter-64")
+            
+        case "Instagram":
+            cell.socialIcon.image = UIImage(named: "instagram-64")
+        case "LinkedIn":
+            cell.socialIcon.image = UIImage(named: "linkedin-3-64")
+        case "Facebook":
+            cell.socialIcon.image = UIImage(named: "facebook-3-64")
+        default:
+            print("Error")
         }
         
         return cell
     }
     
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         tableView.deselectRow(at: indexPath, animated: true)
         switch sections[indexPath.section].name {
         case "Twitter":
-                self.performSegue(withIdentifier: "TwitterChannelSegue", sender: self)
+            self.performSegue(withIdentifier: "TwitterChannelSegue", sender: self)
         case "Instagram":
             self.performSegue(withIdentifier: "MessengerChannelSegue", sender: self)
         case "LinkedIn":
             self.performSegue(withIdentifier: "LinkedInChannelSegue", sender: self)
         case "Facebook":
             self.performSegue(withIdentifier: "FacebookChannelSegue", sender: self)
-            default:
-                print("default")
+        default:
+            print("default")
         }
     }
     
@@ -116,25 +117,27 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
             let request = client.urlRequest(withMethod: "GET",
                                             urlString: "https://api.twitter.com/1.1/statuses/retweets_of_me.json",
                                             parameters: ["count": "20"],
-                error: nil)
+                                            error: nil)
             client.sendTwitterRequest(request)
             { response, data, connectionError in
                 let json = try? JSONSerialization.jsonObject(with: data!, options: [])
                 if let JSONString = String(data: data!, encoding: String.Encoding.utf8) {
-                   print(JSONString)
+                    print(JSONString)
                 }
                 let jsonResult: NSArray! = try? JSONSerialization.jsonObject(with: data!, options:[]) as! NSArray
-
-                    if (jsonResult != nil) {
-                        let dict = jsonResult[0] as? NSDictionary
+                
+                if (jsonResult != nil) {
+                    for retweet in jsonResult {
+                        let dict = retweet as? NSDictionary
                         // process jsonResult
-                        print("json 0 \(jsonResult.count)" )
                         print("jeson \(jsonResult[0])")
-                        var text = dict!["text"]!
-                        print("would this work ? \(text)")
-                    } else {
-                       // couldn't load JSON, look at error
+                        let newRetweet = Notification(body: dict!["text"]! as! String, time: "", notificationType: "Retweet")
+                        self.twitterNotifications.append(newRetweet)
+                        print("appended new retweet")
                     }
+                } else {
+                    // couldn't load JSON, look at error
+                }
             }
         }
     }
@@ -142,7 +145,7 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.sections.count
     }
-
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.sections[section].name
     }
@@ -165,12 +168,12 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         let mover = self.sections.remove(at: sourceIndexPath.section)
         self.sections.insert(mover, at: destinationIndexPath.section)
     }
-
+    
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
-            topView = 0
-            self.title = "Channels"
-            dismiss(animated: true, completion: nil)
-        }
+        topView = 0
+        self.title = "Channels"
+        dismiss(animated: true, completion: nil)
+    }
     
     //0 - opening settings, 1 - settings open, 2 - social opt open, 3 - change pass open
     @IBAction func hamTapped(_ sender: Any) {
@@ -181,7 +184,7 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
             let tap = UITapGestureRecognizer(target: self, action:    #selector(self.handleTap(_:)))
             transiton.dimmingView.addGestureRecognizer(tap)
             
-             settingsViewController.didTapMenuType = { menuType in
+            settingsViewController.didTapMenuType = { menuType in
                 self.transitionToNew(menuType)
             }
             topView = 1
@@ -194,9 +197,9 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         } else {
             print("Error hamTapped")
         }
-
+        
     }
-
+    
     func transitionToNew(_ menuType: MenuType) {
         switch menuType {
         case .addSocial:
@@ -217,7 +220,7 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
             break
         }
     }
-
+    
 }
 
 extension NotificationHubViewController: UIViewControllerTransitioningDelegate {
@@ -225,21 +228,21 @@ extension NotificationHubViewController: UIViewControllerTransitioningDelegate {
         transiton.isPresenting = true
         return transiton
     }
-
+    
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transiton.isPresenting = false
         return transiton
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
