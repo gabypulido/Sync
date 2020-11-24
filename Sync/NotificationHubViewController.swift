@@ -116,7 +116,11 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         }
     }
     
-    /*I moved this if statement from ViewDidLoad to its own function, it prints out a super long JSON string with recent users retweets*/
+    /*
+     TODO:
+     STORE NOTIFICATIONS IN CORE DATA
+     DM NOTIFICATIONS
+     */
     func getTwitterNotifications(){
         if(TWTRTwitter.sharedInstance().sessionStore.session() != nil){
             //Get recent retweets
