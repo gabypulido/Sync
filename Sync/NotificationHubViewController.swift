@@ -75,12 +75,16 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         switch sections[indexPath.section].name {
         case "Twitter":
             if(twitterNotifications.count != 0){
-                let notification = self.twitterNotifications[0]
-                cell.notificationBody.text = "Your tweet \(notification.body) was retweeted."
-                print("in if")
+                let notification = self.twitterNotifications[twitterNotifications.count - 1]
+                switch notification.notificationType {
+                case "Retweet":
+                    cell.notificationBody.text = "Your tweet \(notification.body) was retweeted."
+                case "Mention":
+                    cell.notificationBody.text = "You were mentioned in a tweet: \(notification.body)"
+                default:
+                    print("default")
+                }
             }
-            print("count \(self.twitterNotifications.count)")
-            
             cell.socialIcon.image = UIImage(named: "twitter-64")
             
         case "Instagram":
@@ -139,11 +143,11 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
                         self.notificationHubTable.reloadData()
                     }
                     
-                //Get recent mentions
+                    //Get recent mentions
                     let mentionRequest = client.urlRequest(withMethod: "GET",
-                                                    urlString: "https://api.twitter.com/1.1/statuses/mentions_timeline.json",
-                                                    parameters: ["count": "20"],
-                                                    error: nil)
+                                                           urlString: "https://api.twitter.com/1.1/statuses/mentions_timeline.json",
+                                                           parameters: ["count": "20"],
+                                                           error: nil)
                     client.sendTwitterRequest(mentionRequest){ response, data, connectionError in
                         let json = try? JSONSerialization.jsonObject(with: data!, options: [])
                         let jsonResult: NSArray! = try? JSONSerialization.jsonObject(with: data!, options:[]) as! NSArray
@@ -265,12 +269,12 @@ extension NotificationHubViewController: UIViewControllerTransitioningDelegate {
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      
      */
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "TwitterChannelSegue",
-//            let nextVC = segue.destination as? TwitterChannelViewController
-//        {
-//            nextVC.delegate = self
-//            //nextVC.notifications = twitterNotifications
-//        }
-//    }
+    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //        if segue.identifier == "TwitterChannelSegue",
+    //            let nextVC = segue.destination as? TwitterChannelViewController
+    //        {
+    //            nextVC.delegate = self
+    //            //nextVC.notifications = twitterNotifications
+    //        }
+    //    }
 }
