@@ -147,28 +147,28 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
                         self.notificationHubTable.reloadData()
                     }
                     
-                    //Get recent mentions
-                    let mentionRequest = client.urlRequest(withMethod: "GET",
-                                                           urlString: "https://api.twitter.com/1.1/statuses/mentions_timeline.json",
-                                                           parameters: ["count": "20"],
-                                                           error: nil)
-                    client.sendTwitterRequest(mentionRequest){ response, data, connectionError in
-                        let json = try? JSONSerialization.jsonObject(with: data!, options: [])
-                        let jsonResult: NSArray! = try? JSONSerialization.jsonObject(with: data!, options:[]) as! NSArray
-                        
-                        if (jsonResult != nil) {
-                            for mention in jsonResult {
-                                let dict = mention as? NSDictionary
-                                // process jsonResult
-                                print("\(dict!["text"]!)")
-                                let newMention = Notification(body: dict!["text"]! as! String, time: "", notificationType: "Mention")
-                                self.twitterNotifications.append(newMention)
-                                self.notificationHubTable.reloadData()
-                            }
-                        }
-                    }
                 } else {
                     // couldn't load JSON, look at error
+                }
+            }
+            //Get recent mentions
+            let mentionRequest = client.urlRequest(withMethod: "GET",
+                                                   urlString: "https://api.twitter.com/1.1/statuses/mentions_timeline.json",
+                                                   parameters: ["count": "20"],
+                                                   error: nil)
+            client.sendTwitterRequest(mentionRequest){ response, data, connectionError in
+                let json = try? JSONSerialization.jsonObject(with: data!, options: [])
+                let jsonResult: NSArray! = try? JSONSerialization.jsonObject(with: data!, options:[]) as! NSArray
+                
+                if (jsonResult != nil) {
+                    for mention in jsonResult {
+                        let dict = mention as? NSDictionary
+                        // process jsonResult
+                        print("\(dict!["text"]!)")
+                        let newMention = Notification(body: dict!["text"]! as! String, time: "", notificationType: "Mention")
+                        self.twitterNotifications.append(newMention)
+                        self.notificationHubTable.reloadData()
+                    }
                 }
             }
         }
