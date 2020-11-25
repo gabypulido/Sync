@@ -84,8 +84,10 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
                 default:
                     print("default")
                 }
+                cell.notificationTime.text = notification.time
             }
             cell.socialIcon.image = UIImage(named: "twitter-64")
+            
             
         case "Instagram":
             cell.socialIcon.image = UIImage(named: "instagram-64")
@@ -165,12 +167,32 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
                         let dict = mention as? NSDictionary
                         // process jsonResult
                         print("\(dict!["text"]!)")
-                        let newMention = Notification(body: dict!["text"]! as! String, time: "", notificationType: "Mention")
+                        let newMention = Notification(body: dict!["text"]! as! String, time: dict!["created_at"] as! String, notificationType: "Mention")
                         self.twitterNotifications.append(newMention)
                         self.notificationHubTable.reloadData()
                     }
                 }
             }
+            //Get recent DM's
+//            let dmRequest = client.urlRequest(withMethod: "GET",
+//                                                   urlString: "https://api.twitter.com/1.1/direct_messages/events/list.json",
+//                                                   parameters: ["count": "20"],
+//                                                   error: nil)
+//            client.sendTwitterRequest(dmRequest){ response, data, connectionError in
+//                let json = try? JSONSerialization.jsonObject(with: data!, options: [])
+//                let jsonResult: NSArray! = try? JSONSerialization.jsonObject(with: data!, options:[]) as! NSArray
+//
+//                if (jsonResult != nil) {
+//                    for dm in jsonResult {
+//                        let dict = dm as? NSDictionary
+//                        // process jsonResult
+//                        print("dm: \(dict!["text"]!)")
+//                        let newDM = Notification(body: dict!["text"]! as! String, time: "", notificationType: "DM")
+//                        self.twitterNotifications.append(newDM)
+//                        self.notificationHubTable.reloadData()
+//                    }
+//                }
+//            }
         }
     }
     
