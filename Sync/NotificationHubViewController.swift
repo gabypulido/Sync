@@ -53,7 +53,6 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //tableCell.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
         // Do any additional setup after loading the view.
         getTwitterNotifications()
         sections = [Category(name: "Twitter", items: twitterNotifications), Category(name: "Instagram", items: instagramNotifications), Category(name: "LinkedIn", items: linkedInNotifications), Category(name: "Facebook", items: facebookNotifications)]
@@ -120,7 +119,11 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
     
     /*
      TODO:
+     FIX NOTIFICATION TIMES
      STORE NOTIFICATIONS IN CORE DATA
+     
+        ->Time might not be possible
+     
      DM NOTIFICATIONS
      */
     func getTwitterNotifications(){
@@ -135,7 +138,6 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
             { response, data, connectionError in
                 let json = try? JSONSerialization.jsonObject(with: data!, options: [])
                 if let JSONString = String(data: data!, encoding: String.Encoding.utf8) {
-                    print(JSONString)
                 }
                 let jsonResult: NSArray! = try? JSONSerialization.jsonObject(with: data!, options:[]) as! NSArray
                 
@@ -144,9 +146,9 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
                         let dict = retweet as? NSDictionary
                         // process jsonResult
                         print("jeson \(jsonResult[0])")
-                        let newRetweet = Notification(body: dict!["text"]! as! String, time: "", notificationType: "Retweet")
+                        let newRetweet = Notification(body: dict!["text"]! as! String, time: dict!["created_at"] as! String, notificationType: "Retweet")
                         self.twitterNotifications.append(newRetweet)
-                        self.notificationHubTable.reloadData()
+                        
                     }
                     
                 } else {
@@ -165,8 +167,6 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
                 if (jsonResult != nil) {
                     for mention in jsonResult {
                         let dict = mention as? NSDictionary
-                        // process jsonResult
-                        print("\(dict!["text"]!)")
                         let newMention = Notification(body: dict!["text"]! as! String, time: dict!["created_at"] as! String, notificationType: "Mention")
                         self.twitterNotifications.append(newMention)
                         self.notificationHubTable.reloadData()
@@ -194,6 +194,7 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
 //                }
 //            }
         }
+        self.notificationHubTable.reloadData()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
