@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DropDown
 
 class TwitterChannelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -19,6 +20,8 @@ class TwitterChannelViewController: UIViewController, UITableViewDelegate, UITab
     
     var delegate: UIViewController!
     //var notifications: [Notification]!
+    let dropDown = DropDown()
+    var filterType = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,14 +40,16 @@ class TwitterChannelViewController: UIViewController, UITableViewDelegate, UITab
         return cell
     }
     
-
-    /*
-    // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func chooseType(_ sender: Any) {
+        dropDown.dataSource = ["All", "Retweet", "Mention", "Direct Message"]
+        dropDown.anchorView = (sender as! AnchorView)
+        dropDown.bottomOffset = CGPoint(x: 0, y: (sender as AnyObject).frame.size.height)
+            dropDown.show()
+            dropDown.selectionAction = { [weak self] (index: Int, item: String) in
+                guard let _ = self else { return }
+                (sender as AnyObject).setTitle(item, for: .normal)
+                self!.filterType = item
+            }
     }
-    */
 
 }

@@ -370,7 +370,7 @@
             <objects>
                 <viewController storyboardIdentifier="NotifVC" id="e0G-6Y-1Pv" customClass="NotificationHubViewController" customModule="Sync" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dBD-xF-xgJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="104" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yBH-gc-Bcq">
@@ -638,7 +638,21 @@
                         <viewLayoutGuide key="safeArea" id="K4B-lD-iAm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Twitter" id="205-59-VUi"/>
+                    <navigationItem key="navigationItem" title="Twitter" id="205-59-VUi">
+                        <barButtonItem key="rightBarButtonItem" title="Filter Button" style="plain" id="RBA-ka-KRx">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="xhr-0Z-rqS" userLabel="Filter">
+                                <rect key="frame" x="302" y="13" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Filter"/>
+                                <connections>
+                                    <action selector="chooseType:" destination="Xwd-ac-4Op" eventType="touchUpInside" id="lsq-RO-EtC"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <action selector="chooseNotificationType:" destination="Xwd-ac-4Op" id="9Xh-Hy-rMU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="twitterNotificationTable" destination="RiY-eV-RwP" id="9Ls-pe-Zx1"/>
                     </connections>
