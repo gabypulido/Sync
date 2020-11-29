@@ -33,7 +33,6 @@ class TwitterChannelViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         twitterNotificationTable.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
-        // Do any additional setup after loading the view.
         
         let mainVC = NotificationHubViewController()
         self.fullNotifications = mainVC.twitterNotifications
@@ -50,7 +49,8 @@ class TwitterChannelViewController: UIViewController, UITableViewDelegate, UITab
         let row = indexPath.row
         
         print("current row is: \(row)")
-        let currNotification = fullNotifications[row]
+//        let currNotification = fullNotifications[row]
+        let currNotification = filterNotifications()[row]
         
         cell.socialIcon.image = UIImage(named: "twitter-64")
         cell.notificationBody.text = currNotification.body
@@ -69,7 +69,25 @@ class TwitterChannelViewController: UIViewController, UITableViewDelegate, UITab
                 guard let _ = self else { return }
                 (sender as AnyObject).setTitle(item, for: .normal)
                 self!.filterType = item
+                self!.twitterNotificationTable.reloadData()
             }
     }
+    
+    func filterNotifications() -> [Notification] {
+            switch self.filterType {
+                case "Retweet":
+                    print("Retweet")
+                    return fullNotifications.filter{ $0.notificationType == ("Retweet") }
+                case "Mention":
+                    print("Mention")
+                    return fullNotifications.filter{ $0.notificationType == ("Mention") }
+                case "Direct Message":
+                    print("Direct message does not work")
+                    return fullNotifications.filter{ $0.notificationType == ("Direct Message") }
+                default:
+                    print("All or default")
+                    return fullNotifications
+            }
+        }
 
 }
