@@ -48,8 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 annotation: options[UIApplication.OpenURLOptionsKey.annotation]
             )
         let twtrHandled = TWTRTwitter.sharedInstance().application(app, open: url, options: options)
-            return twtrHandled
-        }  
+        let googleHandled = GIDSignIn.sharedInstance().handle(url)
+            return twtrHandled || googleHandled
+        }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -25,7 +25,14 @@
 				<string>twitterkit-yG0es9HiAi8vmkMtpKApNkVsw</string>
 			</array>
 		</dict>
-		<dict/>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.809645273514-klm3lec75pae0l24f26g57f942uldsvj</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>

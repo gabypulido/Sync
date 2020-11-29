@@ -7,10 +7,27 @@
 //
 
 import UIKit
-import FirebaseAuth
+import Firebase
 import GoogleSignIn
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController, GIDSignInDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let authentication = user.authentication {
+                let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+
+            Auth.auth().signIn(with: credential, completion: { (user, error) -> Void in
+                    if error != nil {
+                        print("Problem at signing in with google with error : \(error)")
+                    } else if error == nil {
+                        print("user successfully signed in through GOOGLE! uid:\(Auth.auth().currentUser!.uid)")
+                        print("signed in")
+                        self.performSegue(withIdentifier: "signInSegueIdentifier", sender: nil)
+                    }
+                })
+            }
+//        self.performSegue(withIdentifier: "signInSegueIdentifier", sender: nil)
+    }
+    
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -18,11 +35,14 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var resetPasswordButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
+    private var authListener: AuthStateDidChangeListenerHandle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()!.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+//        GIDSignIn.sharedInstance().signIn()
     }
     
     override func viewWillAppear(_ animated: Bool) {
