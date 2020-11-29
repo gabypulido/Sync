@@ -9,7 +9,6 @@
 import UIKit
 import TwitterKit
 
-
 struct Category {
     let name : String
     var items : [Notification]
@@ -275,7 +274,6 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
             break
         }
     }
-    
 }
 
 extension NotificationHubViewController: UIViewControllerTransitioningDelegate {
