@@ -15,6 +15,7 @@ target 'Sync' do
   pod 'FBSDKShareKit'
   pod 'TwitterKit'
   pod 'DropDown'
+  pod 'GoogleSignIn'
   
   # add pods for desired Firebase products
   # https://firebase.google.com/docs/ios/setup#available-pods

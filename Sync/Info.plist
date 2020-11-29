@@ -16,8 +16,28 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb2929349403973105</string>
+				<string>twitterkit-yG0es9HiAi8vmkMtpKApNkVsw</string>
+			</array>
+		</dict>
+		<dict/>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>2929349403973105</string>
+	<key>FacebookDisplayName</key>
+	<string>SYNC</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>twitter</string>
+		<string>twitterauth</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -40,25 +60,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>fb2929349403973105</string>
-				<string>twitterkit-yG0es9HiAi8vmkMtpKApNkVsw</string>
-			</array>
-		</dict>
-	</array>
-	<key>FacebookAppID</key>
-	<string>2929349403973105</string>
-	<key>FacebookDisplayName</key>
-	<string>SYNC</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>twitter</string>
-		<string>twitterauth</string>
 	</array>
 </dict>
 </plist>

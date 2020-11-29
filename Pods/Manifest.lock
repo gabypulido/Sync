@@ -1,5 +1,10 @@
 PODS:
   - Alamofire (5.0.2)
+  - AppAuth (1.4.0):
+    - AppAuth/Core (= 1.4.0)
+    - AppAuth/ExternalUserAgent (= 1.4.0)
+  - AppAuth/Core (1.4.0)
+  - AppAuth/ExternalUserAgent (1.4.0)
   - DropDown (2.3.13)
   - FBSDKCoreKit (8.1.0):
     - FBSDKCoreKit/Basics (= 8.1.0)
@@ -67,6 +72,10 @@ PODS:
     - nanopb (~> 2.30906.0)
   - GoogleDataTransport (8.0.0):
     - nanopb (~> 2.30906.0)
+  - GoogleSignIn (5.0.2):
+    - AppAuth (~> 1.2)
+    - GTMAppAuth (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleUtilities/AppDelegateSwizzler (7.0.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -86,7 +95,14 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (7.0.0):
     - GoogleUtilities/Logger
+  - GTMAppAuth (1.1.0):
+    - AppAuth/Core (~> 1.4)
+    - GTMSessionFetcher (~> 1.4)
+  - GTMSessionFetcher (1.5.0):
+    - GTMSessionFetcher/Full (= 1.5.0)
   - GTMSessionFetcher/Core (1.5.0)
+  - GTMSessionFetcher/Full (1.5.0):
+    - GTMSessionFetcher/Core (= 1.5.0)
   - leveldb-library (1.22)
   - nanopb (2.30906.0):
     - nanopb/decode (= 2.30906.0)
@@ -107,11 +123,13 @@ DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Database
+  - GoogleSignIn
   - TwitterKit
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AppAuth
     - DropDown
     - FBSDKCoreKit
     - FBSDKLoginKit
@@ -125,7 +143,9 @@ SPEC REPOS:
     - FirebaseInstallations
     - GoogleAppMeasurement
     - GoogleDataTransport
+    - GoogleSignIn
     - GoogleUtilities
+    - GTMAppAuth
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
@@ -135,6 +155,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
+  AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   FBSDKCoreKit: b3ca27e124dae67122d3bb47c8f96800b39986a6
   FBSDKLoginKit: a3a92ba9380759cd0c1aa8319465fb5f2857c602
@@ -148,7 +169,9 @@ SPEC CHECKSUMS:
   FirebaseInstallations: c28d4bcbb5c6884d1a39afbc0bd7fc590e31e9b7
   GoogleAppMeasurement: 7790ef975d1d463c8614cd949a847e612edf087a
   GoogleDataTransport: 6ce8004a961db1b905740d7be106c61ba7e89c21
+  GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GoogleUtilities: ffb2f4159f2c897c6e8992bd7fbcdef8a300589c
+  GTMAppAuth: 197a8dabfea5d665224aa00d17f164fc2248dab9
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
@@ -156,6 +179,6 @@ SPEC CHECKSUMS:
   TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
   TwitterKit: 5e4f41d70b9abdb41df5467f52d7aa2c0fd26ebb
 
-PODFILE CHECKSUM: d1ba3258fa02034a33c596755c31f14e8e633de2
+PODFILE CHECKSUM: bbe813f1a6da8db4e4b96c2f452bde04f10353b8
 
-COCOAPODS: 1.10.0.rc.1
+COCOAPODS: 1.10.0

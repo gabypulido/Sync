@@ -11,6 +11,7 @@ import CoreData
 import Firebase
 import FBSDKCoreKit
 import TwitterKit
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
