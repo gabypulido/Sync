@@ -11,7 +11,7 @@ import TwitterKit
 
 struct Category {
     let name : String
-    var items : [Notification]
+    var items : [NSManagedObject]
 }
 
 struct Notification {
@@ -28,12 +28,19 @@ class SocialMediaTableViewCell: UITableViewCell {
 
 class NotificationHubViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITableViewDragDelegate {
     
-    var twitterNotifications:[Notification] = []
+    var twitterNotifications:[NSManagedObject] = []{
+        didSet{
+            notificationHubTable.reloadData()
+        }
+    }
     
     //DUMMY PLACEHOLDERS
-    var instagramNotifications = [Notification(body: "Instagram Test", time: "time")]
-    var linkedInNotifications = [Notification(body: "LinkedIn Test", time: "time")]
-    var facebookNotifications = [Notification(body: "Facebook Test", time: "time")]
+//    var instagramNotifications = [Notification(body: "Instagram Test", time: "time")]
+//    var linkedInNotifications = [Notification(body: "LinkedIn Test", time: "time")]
+//    var facebookNotifications = [Notification(body: "Facebook Test", time: "time")]
+    var instagramNotifications:[NSManagedObject] = []
+    var linkedInNotifications:[NSManagedObject] = []
+    var facebookNotifications :[NSManagedObject] = []
     
     var sections = [Category]()
     
@@ -74,15 +81,15 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         case "Twitter":
             if(twitterNotifications.count != 0){
                 let notification = self.twitterNotifications[twitterNotifications.count - 1]
-                switch notification.notificationType {
+                switch notification.value(forKey: "notificationType") as? String{
                 case "Retweet":
-                    cell.notificationBody.text = "Your tweet \(notification.body) was retweeted."
+                    cell.notificationBody.text = "Your tweet \(notification.value(forKey: "notificationContent") as? String) was retweeted."
                 case "Mention":
-                    cell.notificationBody.text = "You were mentioned in a tweet: \(notification.body)"
+                    cell.notificationBody.text = "You were mentioned in a tweet: \(notification.value(forKey: "notificationContent") as? String)"
                 default:
                     print("default")
                 }
-                cell.notificationTime.text = notification.time
+                cell.notificationTime.text = notification.value(forKey: "time") as? String
             }
             cell.socialIcon.image = UIImage(named: "twitter-64")
             
@@ -120,7 +127,9 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         if segue.identifier == "TwitterChannelSegue",
             let nextVC = segue.destination as? TwitterChannelViewController {
             // the button to change the color has been pressed
+            print("twwitter count  \(twitterNotifications.count)")
             nextVC.fullNotifications = twitterNotifications
+            
         }
     }
     
@@ -154,7 +163,9 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
                         // process jsonResult
                         print("jeson \(jsonResult[0])")
                         let newRetweet = Notification(body: dict!["text"]! as! String, time: dict!["created_at"] as! String, notificationType: "Retweet")
-                        self.twitterNotifications.append(newRetweet)
+                        self.storeNotification(notif: newRetweet)
+                        self.notificationHubTable.reloadData()
+                        //self.twitterNotifications.append(newRetweet)
                         
                     }
                     
@@ -175,7 +186,8 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
                     for mention in jsonResult {
                         let dict = mention as? NSDictionary
                         let newMention = Notification(body: dict!["text"]! as! String, time: dict!["created_at"] as! String, notificationType: "Mention")
-                        self.twitterNotifications.append(newMention)
+                        self.storeNotification(notif: newMention)
+                        //self.twitterNotifications.append(newMention)
                         self.notificationHubTable.reloadData()
                     }
                 }
@@ -202,6 +214,48 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
 //            }
         }
         self.notificationHubTable.reloadData()
+    }
+    
+    func storeNotification(notif: Notification){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let notificationEntity = NSEntityDescription.insertNewObject(forEntityName: "NotificationEntity", into: context)
+        
+        //set the attribute values
+        notificationEntity.setValue(notif.body, forKey: "notificationContent")
+        notificationEntity.setValue(notif.notificationType, forKey: "notificationType")
+        notificationEntity.setValue(notif.time, forKey: "time")
+        
+        //commit the changes
+        do{
+            try context.save()
+           twitterNotifications = retrieveNotifications()
+        }catch{
+            //if an error occurs
+            let nserror = error as NSError
+            NSLog("Unsolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+    }
+    
+    func retrieveNotifications() -> [NSManagedObject]{
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "NotificationEntity")
+        
+        var fetchedResults: [NSManagedObject]? = nil
+        
+        do{
+            try fetchedResults = context.fetch(request) as? [NSManagedObject]
+        }catch{
+            //if an error occurs
+            let nserror = error as NSError
+            NSLog("Unsolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+        return (fetchedResults)!
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

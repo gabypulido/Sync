@@ -8,6 +8,7 @@
 
 import UIKit
 import DropDown
+import CoreData
 
 class TwitterTableViewCell: UITableViewCell {
     @IBOutlet weak var socialIcon: UIImageView!
@@ -26,7 +27,7 @@ class TwitterChannelViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     var delegate: UIViewController!
-    var fullNotifications: [Notification]!
+    var fullNotifications: [NSManagedObject]!
     let dropDown = DropDown()
     var filterType = ""
     
@@ -35,7 +36,9 @@ class TwitterChannelViewController: UIViewController, UITableViewDelegate, UITab
         twitterNotificationTable.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
         
         let mainVC = NotificationHubViewController()
-        self.fullNotifications = mainVC.twitterNotifications
+        self.fullNotifications = mainVC.retrieveNotifications()
+        print("count  \(fullNotifications.count)")
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,9 +56,9 @@ class TwitterChannelViewController: UIViewController, UITableViewDelegate, UITab
         let currNotification = filterNotifications()[row]
         
         cell.socialIcon.image = UIImage(named: "twitter-64")
-        cell.notificationBody.text = currNotification.body
-        cell.notificationType.text = currNotification.notificationType
-        cell.notificationTime.text = currNotification.time
+        cell.notificationBody.text = currNotification.value(forKey: "notificationContent") as? String
+        cell.notificationType.text = currNotification.value(forKey: "notificationType") as? String
+        cell.notificationTime.text = currNotification.value(forKey: "time") as? String
         
         return cell
     }
@@ -73,17 +76,17 @@ class TwitterChannelViewController: UIViewController, UITableViewDelegate, UITab
             }
     }
     
-    func filterNotifications() -> [Notification] {
+    func filterNotifications() -> [NSManagedObject] {
             switch self.filterType {
                 case "Retweet":
                     print("Retweet")
-                    return fullNotifications.filter{ $0.notificationType == ("Retweet") }
+                    return fullNotifications.filter{ $0.value(forKey: "notificationType") as? String == ("Retweet") }
                 case "Mention":
                     print("Mention")
-                    return fullNotifications.filter{ $0.notificationType == ("Mention") }
+                    return fullNotifications.filter{ $0.value(forKey: "notificationType") as? String == ("Mention") }
                 case "Direct Message":
                     print("Direct message does not work")
-                    return fullNotifications.filter{ $0.notificationType == ("Direct Message") }
+                    return fullNotifications.filter{ $0.value(forKey: "notificationType") as? String == ("Direct Message") }
                 default:
                     print("All or default")
                     return fullNotifications
