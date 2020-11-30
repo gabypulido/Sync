@@ -60,13 +60,28 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //deleteAllRecords()
         getTwitterNotifications()
         sections = [Category(name: "Twitter", items: twitterNotifications), Category(name: "Instagram", items: instagramNotifications), Category(name: "LinkedIn", items: linkedInNotifications), Category(name: "Facebook", items: facebookNotifications)]
         notificationHubTable.backgroundColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
         self.view.backgroundColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
         
         definesPresentationContext = true
+    }
+    
+    func deleteAllRecords() {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let context = delegate.persistentContainer.viewContext
         
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "NotificationEntity")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        
+        do {
+            try context.execute(deleteRequest)
+            try context.save()
+        } catch {
+            print ("There was an error")
+        }
     }
     
     
@@ -83,9 +98,9 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
                 let notification = self.twitterNotifications[twitterNotifications.count - 1]
                 switch notification.value(forKey: "notificationType") as? String{
                 case "Retweet":
-                    cell.notificationBody.text = "Your tweet \(notification.value(forKey: "notificationContent") as? String) was retweeted."
+                    cell.notificationBody.text = "Your tweet \(String(describing: notification.value(forKey: "notificationContent") as? String)) was retweeted."
                 case "Mention":
-                    cell.notificationBody.text = "You were mentioned in a tweet: \(notification.value(forKey: "notificationContent") as? String)"
+                    cell.notificationBody.text = "You were mentioned in a tweet: \(String(describing: notification.value(forKey: "notificationContent") as? String))"
                 default:
                     print("default")
                 }
@@ -136,7 +151,7 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
     /*
      TODO:
      FIX NOTIFICATION TIMES
-     STORE NOTIFICATIONS IN CORE DATA
+     STORE NOTIFICATIONS IN CORE DATA - done
      
         ->Time might not be possible
      
@@ -144,6 +159,7 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
      */
     func getTwitterNotifications(){
         if(TWTRTwitter.sharedInstance().sessionStore.session() != nil){
+            twitterNotifications = []
             //Get recent retweets
             let client = TWTRAPIClient.withCurrentUser()
             let request = client.urlRequest(withMethod: "GET",
@@ -163,8 +179,17 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
                         // process jsonResult
                         print("jeson \(jsonResult[0])")
                         let newRetweet = Notification(body: dict!["text"]! as! String, time: dict!["created_at"] as! String, notificationType: "Retweet")
-                        self.storeNotification(notif: newRetweet)
-                        self.notificationHubTable.reloadData()
+                        var found = false;
+                        for stored in self.twitterNotifications{
+                            if (stored.value(forKey: "notificationContent") as! String != newRetweet.body){
+                                found = true;
+                            }
+                        }
+                        if(found){
+                            self.storeNotification(notif: newRetweet)
+                            self.notificationHubTable.reloadData()
+                        }
+                        
                         //self.twitterNotifications.append(newRetweet)
                         
                     }
