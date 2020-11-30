@@ -116,6 +116,14 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "TwitterChannelSegue",
+            let nextVC = segue.destination as? TwitterChannelViewController {
+            // the button to change the color has been pressed
+            nextVC.fullNotifications = twitterNotifications
+        }
+    }
+    
     /*
      TODO:
      FIX NOTIFICATION TIMES
