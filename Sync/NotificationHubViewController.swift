@@ -60,7 +60,7 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        //deleteAllRecords()
+        deleteAllRecords()
         getTwitterNotifications()
         sections = [Category(name: "Twitter", items: twitterNotifications), Category(name: "Instagram", items: instagramNotifications), Category(name: "LinkedIn", items: linkedInNotifications), Category(name: "Facebook", items: facebookNotifications)]
         notificationHubTable.backgroundColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
@@ -96,11 +96,12 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         case "Twitter":
             if(twitterNotifications.count != 0){
                 let notification = self.twitterNotifications[twitterNotifications.count - 1]
+                var body:String? = notification.value(forKey: "notificationContent") as! String
                 switch notification.value(forKey: "notificationType") as? String{
                 case "Retweet":
-                    cell.notificationBody.text = "Your tweet \(String(describing: notification.value(forKey: "notificationContent") as? String)) was retweeted."
+                    cell.notificationBody.text = "Your tweet \(body!) was retweeted."
                 case "Mention":
-                    cell.notificationBody.text = "You were mentioned in a tweet: \(String(describing: notification.value(forKey: "notificationContent") as? String))"
+                    cell.notificationBody.text = "You were mentioned in a tweet: \(body!)"
                 default:
                     print("default")
                 }
@@ -181,19 +182,15 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
                         let newRetweet = Notification(body: dict!["text"]! as! String, time: dict!["created_at"] as! String, notificationType: "Retweet")
                         var found = false;
                         for stored in self.twitterNotifications{
-                            if (stored.value(forKey: "notificationContent") as! String != newRetweet.body){
+                            if (stored.value(forKey: "notificationContent") as! String == newRetweet.body){
                                 found = true;
                             }
                         }
-                        if(found){
+                        if(!found){
                             self.storeNotification(notif: newRetweet)
                             self.notificationHubTable.reloadData()
                         }
-                        
-                        //self.twitterNotifications.append(newRetweet)
-                        
                     }
-                    
                 } else {
                     // couldn't load JSON, look at error
                 }
@@ -211,9 +208,16 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
                     for mention in jsonResult {
                         let dict = mention as? NSDictionary
                         let newMention = Notification(body: dict!["text"]! as! String, time: dict!["created_at"] as! String, notificationType: "Mention")
-                        self.storeNotification(notif: newMention)
-                        //self.twitterNotifications.append(newMention)
-                        self.notificationHubTable.reloadData()
+                        var found = false;
+                        for stored in self.twitterNotifications{
+                            if (stored.value(forKey: "notificationContent") as! String == newMention.body){
+                                found = true;
+                            }
+                        }
+                        if(!found){
+                            self.storeNotification(notif: newMention)
+                            self.notificationHubTable.reloadData()
+                        }
                     }
                 }
             }

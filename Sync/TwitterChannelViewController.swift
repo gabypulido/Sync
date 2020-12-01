@@ -29,6 +29,7 @@ class TwitterChannelViewController: UIViewController, UITableViewDelegate, UITab
     var delegate: UIViewController!
     var fullNotifications: [NSManagedObject]!
     let dropDown = DropDown()
+    var count = 0;
     var filterType = ""
     
     override func viewDidLoad() {
@@ -42,7 +43,7 @@ class TwitterChannelViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fullNotifications.count
+        return filterNotifications().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,6 +55,7 @@ class TwitterChannelViewController: UIViewController, UITableViewDelegate, UITab
         print("current row is: \(row)")
 //        let currNotification = fullNotifications[row]
         let currNotification = filterNotifications()[row]
+        
         
         cell.socialIcon.image = UIImage(named: "twitter-64")
         cell.notificationBody.text = currNotification.value(forKey: "notificationContent") as? String
@@ -80,6 +82,7 @@ class TwitterChannelViewController: UIViewController, UITableViewDelegate, UITab
             switch self.filterType {
                 case "Retweet":
                     print("Retweet")
+                    
                     return fullNotifications.filter{ $0.value(forKey: "notificationType") as? String == ("Retweet") }
                 case "Mention":
                     print("Mention")
