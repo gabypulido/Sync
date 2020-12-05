@@ -81,12 +81,12 @@ class SignUpViewController: UIViewController, GIDSignInDelegate{
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
-            let alert = UIAlertController(
-                title: "Sign in failed",
-                  message: error.localizedDescription,
-                preferredStyle: .alert)
-              alert.addAction(UIAlertAction(title:"OK",style:.default))
-              self.present(alert, animated: true, completion: nil)
+//            let alert = UIAlertController(
+//                title: "Sign in failed",
+//                  message: error.localizedDescription,
+//                preferredStyle: .alert)
+//              alert.addAction(UIAlertAction(title:"OK",style:.default))
+//              self.present(alert, animated: true, completion: nil)
             return
           }
           guard let authentication = user.authentication else { return }

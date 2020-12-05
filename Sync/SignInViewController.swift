@@ -21,12 +21,12 @@ class SignInViewController: UIViewController, GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
-            let alert = UIAlertController(
-                title: "Sign in failed",
-                  message: error.localizedDescription,
-                preferredStyle: .alert)
-              alert.addAction(UIAlertAction(title:"OK",style:.default))
-              self.present(alert, animated: true, completion: nil)
+//            let alert = UIAlertController(
+//                title: "Sign in failed",
+//                  message: error.localizedDescription,
+//                preferredStyle: .alert)
+//              alert.addAction(UIAlertAction(title:"OK",style:.default))
+//              self.present(alert, animated: true, completion: nil)
             return
           }
           guard let authentication = user.authentication else { return }
@@ -103,5 +103,10 @@ class SignInViewController: UIViewController, GIDSignInDelegate {
     
     @IBAction func googleSignIn(_ sender: Any) {
         GIDSignIn.sharedInstance().signIn()
+    }
+    
+    // code to enable tapping on the background to remove software keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
