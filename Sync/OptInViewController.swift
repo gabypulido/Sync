@@ -12,7 +12,7 @@ import SafariServices
 import TwitterKit
 
 class OptInViewController: UIViewController {
-
+    
     @IBOutlet weak var twitter: UIButton!
     @IBOutlet weak var facebook: UIButton!
     @IBOutlet weak var instagram: UIButton!
@@ -20,7 +20,7 @@ class OptInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            }
+    }
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,61 +33,62 @@ class OptInViewController: UIViewController {
         facebook.clipsToBounds = true
         linkedin.layer.cornerRadius = 10
         linkedin.clipsToBounds = true
+        
+        if((TWTRTwitter.sharedInstance().sessionStore.session()?.userID) == nil){
+            self.twitter.setTitle("Sign into Twitter", for: .normal)
+        } else{
+            self.twitter.setTitle("Log out of Twitter", for: .normal)
+        }
     }
-
+    
     @IBAction func twitterLoginButtonPressed(_ sender: Any) {
-        TWTRTwitter.sharedInstance().logIn { session, error in
-                if (session != nil)
-                {
+        
+        if((TWTRTwitter.sharedInstance().sessionStore.session()?.userID) == nil) {
+            //show twitter login button
+            TWTRTwitter.sharedInstance().logIn { session, error in
+                if (session != nil) {
                     print("signed in as \(session!.userName)")
                     let client = TWTRAPIClient.withCurrentUser()
                     let request = client.urlRequest(withMethod: "GET",
                                                     urlString: "https://api.twitter.com/1.1/account/verify_credentials.json",
-                        parameters: ["include_email": "true", "skip_status": "true"],
-                        error: nil)
+                                                    parameters: ["include_email": "true", "skip_status": "true"],
+                                                    error: nil)
                     client.sendTwitterRequest(request)
                     { response, data, connectionError in
                         print(response)
                     }
-                }
-                else
-                {
+                    self.twitter.setTitle("Log out of Twitter", for: .normal)
+                } else {
                     print("error: \(error!.localizedDescription)");
                 }
-                }
-        if((TWTRTwitter.sharedInstance().sessionStore.session()?.userID) == nil)
-         {
-        //show twitter login button
-        print("nil")
-         }
-        else
-         {
-            self.twitter.setTitle("Log out of twitter", for: .normal)
-            
-                    let store = TWTRTwitter.sharedInstance().sessionStore
-                    if let userID = store.session()?.userID {
-                        store.logOutUserID(userID)
-                    }
+            }
+            print("nil")
+        } else {
+            let store = TWTRTwitter.sharedInstance().sessionStore
+            if let userID = store.session()?.userID {
+                store.logOutUserID(userID)
+            }
+            self.twitter.setTitle("Sign into Twitter", for: .normal)
         }
     }
     
     @IBAction func facebookLoginButtonPressed(_ sender: Any) {
         let fbLoginManager : LoginManager = LoginManager()
         if(AccessToken.current == nil){
-        fbLoginManager.logIn(permissions: ["email"], from: self) { (result, error) -> Void in
-            if (error == nil){
-                let fbloginresult : LoginManagerLoginResult = result!
-              // if user cancel the login
-              if (result?.isCancelled)!{
-                      return
-              }
-              if(fbloginresult.grantedPermissions.contains("email"))
-              {
-                self.getFBUserData()
-                self.facebook.setTitle("Log out of Facebook", for: .normal)
-              }
+            fbLoginManager.logIn(permissions: ["email"], from: self) { (result, error) -> Void in
+                if (error == nil){
+                    let fbloginresult : LoginManagerLoginResult = result!
+                    // if user cancel the login
+                    if (result?.isCancelled)!{
+                        return
+                    }
+                    if(fbloginresult.grantedPermissions.contains("email"))
+                    {
+                        self.getFBUserData()
+                        self.facebook.setTitle("Log out of Facebook", for: .normal)
+                    }
+                }
             }
-        }
         }else{
             fbLoginManager.logOut()
             self.facebook.setTitle("Sign into Facebook", for: .normal)
@@ -97,24 +98,24 @@ class OptInViewController: UIViewController {
     func getFBUserData(){
         if((AccessToken.current) != nil){
             GraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
-          if (error == nil){
-            //everything works print the user data
-            print(result)
-          }
-        })
-      }
+                if (error == nil){
+                    //everything works print the user data
+                    print(result)
+                }
+            })
+        }
     }
-    }
+}
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+/*
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destination.
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 
