@@ -8,6 +8,7 @@
 
 import UIKit
 import TwitterKit
+import Firebase
 
 struct Category {
     let name : String
@@ -18,6 +19,7 @@ struct Notification {
     var body = String()
     var time = String()
     var notificationType = String()
+    var userID = String()
 }
 
 class SocialMediaTableViewCell: UITableViewCell {
@@ -67,6 +69,11 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         self.view.backgroundColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
         
         definesPresentationContext = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        getTwitterNotifications()
     }
     
     func deleteAllRecords() {
@@ -159,6 +166,7 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
      DM NOTIFICATIONS
      */
     func getTwitterNotifications(){
+        let userID : String = (Auth.auth().currentUser?.uid)!
         if(TWTRTwitter.sharedInstance().sessionStore.session() != nil){
             twitterNotifications = []
             //Get recent retweets
@@ -178,8 +186,7 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
                     for retweet in jsonResult {
                         let dict = retweet as? NSDictionary
                         // process jsonResult
-                        print("jeson \(jsonResult[0])")
-                        let newRetweet = Notification(body: dict!["text"]! as! String, time: dict!["created_at"] as! String, notificationType: "Retweet")
+                        let newRetweet = Notification(body: dict!["text"]! as! String, time: dict!["created_at"] as! String, notificationType: "Retweet", userID: userID)
                         var found = false;
                         for stored in self.twitterNotifications{
                             if (stored.value(forKey: "notificationContent") as! String == newRetweet.body){
@@ -207,7 +214,7 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
                 if (jsonResult != nil) {
                     for mention in jsonResult {
                         let dict = mention as? NSDictionary
-                        let newMention = Notification(body: dict!["text"]! as! String, time: dict!["created_at"] as! String, notificationType: "Mention")
+                        let newMention = Notification(body: dict!["text"]! as! String, time: dict!["created_at"] as! String, notificationType: "Mention", userID: userID)
                         var found = false;
                         for stored in self.twitterNotifications{
                             if (stored.value(forKey: "notificationContent") as! String == newMention.body){
@@ -255,11 +262,12 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         notificationEntity.setValue(notif.body, forKey: "notificationContent")
         notificationEntity.setValue(notif.notificationType, forKey: "notificationType")
         notificationEntity.setValue(notif.time, forKey: "time")
+        notificationEntity.setValue(notif.userID, forKey: "user")
         
         //commit the changes
         do{
             try context.save()
-           twitterNotifications = retrieveNotifications()
+            twitterNotifications = retrieveNotifications().filter{ $0.value(forKey: "user") as? String == ((Auth.auth().currentUser?.uid)!) }
         }catch{
             //if an error occurs
             let nserror = error as NSError

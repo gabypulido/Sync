@@ -5,8 +5,9 @@
         <attribute name="notificationType" optional="YES" attributeType="String"/>
         <attribute name="socialMedia" optional="YES" attributeType="String"/>
         <attribute name="time" optional="YES" attributeType="String"/>
+        <attribute name="user" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="NotificationEntity" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="NotificationEntity" positionX="-63" positionY="-18" width="128" height="118"/>
     </elements>
 </model>

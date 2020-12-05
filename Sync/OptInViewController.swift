@@ -63,6 +63,11 @@ class OptInViewController: UIViewController {
         else
          {
             self.twitter.setTitle("Log out of twitter", for: .normal)
+            
+                    let store = TWTRTwitter.sharedInstance().sessionStore
+                    if let userID = store.session()?.userID {
+                        store.logOutUserID(userID)
+                    }
         }
     }
     
