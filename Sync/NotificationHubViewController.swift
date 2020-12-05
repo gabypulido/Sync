@@ -37,9 +37,6 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     //DUMMY PLACEHOLDERS
-//    var instagramNotifications = [Notification(body: "Instagram Test", time: "time")]
-//    var linkedInNotifications = [Notification(body: "LinkedIn Test", time: "time")]
-//    var facebookNotifications = [Notification(body: "Facebook Test", time: "time")]
     var instagramNotifications:[NSManagedObject] = []
     var linkedInNotifications:[NSManagedObject] = []
     var facebookNotifications :[NSManagedObject] = []
@@ -73,7 +70,14 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        getTwitterNotifications()
+        if((TWTRTwitter.sharedInstance().sessionStore.session()?.userID) != nil){
+            getTwitterNotifications()
+        }else{
+            deleteAllRecords()
+            twitterNotifications = []
+            notificationHubTable.reloadData()
+            
+        }
     }
     
     func deleteAllRecords() {
@@ -150,7 +154,6 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         if segue.identifier == "TwitterChannelSegue",
             let nextVC = segue.destination as? TwitterChannelViewController {
             // the button to change the color has been pressed
-            print("twwitter count  \(twitterNotifications.count)")
             nextVC.fullNotifications = twitterNotifications
             
         }
@@ -323,6 +326,14 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        if((TWTRTwitter.sharedInstance().sessionStore.session()?.userID) != nil){
+            getTwitterNotifications()
+        }else{
+            twitterNotifications = []
+            deleteAllRecords()
+            notificationHubTable.reloadData()
+            
+        }
         topView = 0
         self.title = "Channels"
         dismiss(animated: true, completion: nil)
@@ -331,6 +342,7 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
     //0 - opening settings, 1 - settings open, 2 - social opt open, 3 - change pass open
     @IBAction func hamTapped(_ sender: Any) {
         //opening settings
+        notificationHubTable.reloadData()
         if topView == 0 {
             guard let settingsViewController = storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as? SettingsViewController else { return }
             
