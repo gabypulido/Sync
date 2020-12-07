@@ -28,7 +28,7 @@ class SocialMediaTableViewCell: UITableViewCell {
     @IBOutlet weak var notificationTime: UILabel!
 }
 
-class NotificationHubViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITableViewDragDelegate {
+class NotificationHubViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var twitterNotifications:[NSManagedObject] = []{
         didSet{
@@ -51,7 +51,6 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         didSet {
             notificationHubTable.dataSource = self
             notificationHubTable.delegate = self
-            notificationHubTable.dragDelegate = self
             notificationHubTable.dragInteractionEnabled = true
         }
     }
@@ -76,7 +75,6 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
             deleteAllRecords()
             twitterNotifications = []
             notificationHubTable.reloadData()
-            
         }
     }
     
@@ -95,7 +93,6 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         }
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -105,7 +102,7 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         cell.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
         switch sections[indexPath.section].name {
         case "Twitter":
-            if(twitterNotifications.count != 0){
+            if(TWTRTwitter.sharedInstance().sessionStore.session() != nil && twitterNotifications.count != 0 ){
                 let notification = self.twitterNotifications[twitterNotifications.count - 1]
                 var body:String? = notification.value(forKey: "notificationContent") as! String
                 switch notification.value(forKey: "notificationType") as? String{
@@ -130,7 +127,6 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         default:
             print("Error")
         }
-        
         return cell
     }
     
@@ -152,22 +148,13 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TwitterChannelSegue",
-            let nextVC = segue.destination as? TwitterChannelViewController {
+           let nextVC = segue.destination as? TwitterChannelViewController {
             // the button to change the color has been pressed
             nextVC.fullNotifications = twitterNotifications
             
         }
     }
     
-    /*
-     TODO:
-     FIX NOTIFICATION TIMES
-     STORE NOTIFICATIONS IN CORE DATA - done
-     
-        ->Time might not be possible
-     
-     DM NOTIFICATIONS
-     */
     func getTwitterNotifications(){
         let userID : String = (Auth.auth().currentUser?.uid)!
         if(TWTRTwitter.sharedInstance().sessionStore.session() != nil){
@@ -232,25 +219,25 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
                 }
             }
             //Get recent DM's
-//            let dmRequest = client.urlRequest(withMethod: "GET",
-//                                                   urlString: "https://api.twitter.com/1.1/direct_messages/events/list.json",
-//                                                   parameters: ["count": "20"],
-//                                                   error: nil)
-//            client.sendTwitterRequest(dmRequest){ response, data, connectionError in
-//                let json = try? JSONSerialization.jsonObject(with: data!, options: [])
-//                let jsonResult: NSArray! = try? JSONSerialization.jsonObject(with: data!, options:[]) as! NSArray
-//
-//                if (jsonResult != nil) {
-//                    for dm in jsonResult {
-//                        let dict = dm as? NSDictionary
-//                        // process jsonResult
-//                        print("dm: \(dict!["text"]!)")
-//                        let newDM = Notification(body: dict!["text"]! as! String, time: "", notificationType: "DM")
-//                        self.twitterNotifications.append(newDM)
-//                        self.notificationHubTable.reloadData()
-//                    }
-//                }
-//            }
+            //            let dmRequest = client.urlRequest(withMethod: "GET",
+            //                                                   urlString: "https://api.twitter.com/1.1/direct_messages/events/list.json",
+            //                                                   parameters: ["count": "20"],
+            //                                                   error: nil)
+            //            client.sendTwitterRequest(dmRequest){ response, data, connectionError in
+            //                let json = try? JSONSerialization.jsonObject(with: data!, options: [])
+            //                let jsonResult: NSArray! = try? JSONSerialization.jsonObject(with: data!, options:[]) as! NSArray
+            //
+            //                if (jsonResult != nil) {
+            //                    for dm in jsonResult {
+            //                        let dict = dm as? NSDictionary
+            //                        // process jsonResult
+            //                        print("dm: \(dict!["text"]!)")
+            //                        let newDM = Notification(body: dict!["text"]! as! String, time: "", notificationType: "DM")
+            //                        self.twitterNotifications.append(newDM)
+            //                        self.notificationHubTable.reloadData()
+            //                    }
+            //                }
+            //            }
         }
         self.notificationHubTable.reloadData()
     }
@@ -312,19 +299,6 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         header.textLabel?.textColor = UIColor(hue: 0.125, saturation: 0.11, brightness: 0.98, alpha: 1.0)
     }
     
-    //TODO: Figure out drag and drop 
-    func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
-        let dragItem = UIDragItem(itemProvider: NSItemProvider())
-        dragItem.localObject = self.sections[indexPath.section]
-        return [ dragItem ]
-    }
-    
-    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        // Update the model
-        let mover = self.sections.remove(at: sourceIndexPath.section)
-        self.sections.insert(mover, at: destinationIndexPath.section)
-    }
-    
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
         if((TWTRTwitter.sharedInstance().sessionStore.session()?.userID) != nil){
             getTwitterNotifications()
@@ -362,7 +336,6 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         } else {
             print("Error hamTapped")
         }
-        
     }
     
     func transitionToNew(_ menuType: MenuType) {
@@ -397,20 +370,4 @@ extension NotificationHubViewController: UIViewControllerTransitioningDelegate {
         transiton.isPresenting = false
         return transiton
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     
-     */
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        if segue.identifier == "TwitterChannelSegue",
-    //            let nextVC = segue.destination as? TwitterChannelViewController
-    //        {
-    //            nextVC.delegate = self
-    //            //nextVC.notifications = twitterNotifications
-    //        }
-    //    }
 }

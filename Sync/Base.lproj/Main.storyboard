@@ -285,6 +285,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="L2o-YL-fH5" eventType="touchUpInside" id="q5K-gT-KUW"/>
+                                    <action selector="linkedInLoginButtonPressed:" destination="4xG-69-LgW" eventType="touchUpInside" id="aXw-oQ-RWS"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="instagram-64.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hc2-nw-2uf">

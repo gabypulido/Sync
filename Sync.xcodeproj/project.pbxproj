@@ -12,6 +12,7 @@
 		011FDA3F253F645400EBAA44 /* FacebookChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011FDA3E253F645400EBAA44 /* FacebookChannelViewController.swift */; };
 		013C22D9253F3D0700B86C3D /* Sync.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 013C22D7253F3D0700B86C3D /* Sync.xcdatamodeld */; };
 		013C22EE253F479400B86C3D /* TwitterChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C22ED253F479400B86C3D /* TwitterChannelViewController.swift */; };
+		017DAAD2257DB8B8007DC83E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017DAAD1257DB8B8007DC83E /* WebKit.framework */; };
 		019AE001253602740072E2E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019AE000253602740072E2E0 /* AppDelegate.swift */; };
 		019AE003253602740072E2E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019AE002253602740072E2E0 /* ViewController.swift */; };
 		019AE006253602740072E2E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019AE004253602740072E2E0 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 		011FDA3E253F645400EBAA44 /* FacebookChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookChannelViewController.swift; sourceTree = "<group>"; };
 		013C22D8253F3D0700B86C3D /* Sync.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sync.xcdatamodel; sourceTree = "<group>"; };
 		013C22ED253F479400B86C3D /* TwitterChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterChannelViewController.swift; sourceTree = "<group>"; };
+		017DAAD1257DB8B8007DC83E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		019ADFFD253602740072E2E0 /* Sync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		019AE000253602740072E2E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		019AE002253602740072E2E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				017DAAD2257DB8B8007DC83E /* WebKit.framework in Frameworks */,
 				8FE7A2D126EBBBC881A8DCCE /* Pods_Sync.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,6 +134,7 @@
 		EC284F4E0BB6A11402BDC3EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				017DAAD1257DB8B8007DC83E /* WebKit.framework */,
 				0C074A54E7FBD278C1FE14EB /* Pods_Sync.framework */,
 			);
 			name = Frameworks;
@@ -185,7 +189,7 @@
 			);
 			mainGroup = 019ADFF4253602740072E2E0;
 			packageReferences = (
-				010CAC1725508F60003C8BB7 /* RemoteSwiftPackageReference */,
+				010CAC1725508F60003C8BB7 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			productRefGroup = 019ADFFE253602740072E2E0 /* Products */;
 			projectDirPath = "";
@@ -530,7 +534,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		010CAC1725508F60003C8BB7 /* RemoteSwiftPackageReference */ = {
+		010CAC1725508F60003C8BB7 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
 			requirement = {
