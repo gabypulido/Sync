@@ -75,5 +75,9 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Please allow access to select a profile picture</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Please allow access to take a profile picture</string>
 </dict>
 </plist>

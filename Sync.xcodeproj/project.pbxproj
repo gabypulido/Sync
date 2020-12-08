@@ -15,11 +15,11 @@
 		017DAAD2257DB8B8007DC83E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017DAAD1257DB8B8007DC83E /* WebKit.framework */; };
 		019AE001253602740072E2E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019AE000253602740072E2E0 /* AppDelegate.swift */; };
 		019AE003253602740072E2E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019AE002253602740072E2E0 /* ViewController.swift */; };
-		019AE006253602740072E2E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019AE004253602740072E2E0 /* Main.storyboard */; };
 		019AE009253602740072E2E0 /* Sync.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 019AE007253602740072E2E0 /* Sync.xcdatamodeld */; };
 		019AE00B253602740072E2E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 019AE00A253602740072E2E0 /* Assets.xcassets */; };
 		019AE00E253602740072E2E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 019AE00C253602740072E2E0 /* LaunchScreen.storyboard */; };
 		01E092EB253E0EF300C86A29 /* NotificationHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E092EA253E0EF200C86A29 /* NotificationHubViewController.swift */; };
+		141ADAD9257F376A00D299DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141ADAD8257F376A00D299DE /* Main.storyboard */; };
 		5C0035F12551F7F800B1F5DB /* ResetPasswordLoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0035F02551F7F800B1F5DB /* ResetPasswordLoggedInViewController.swift */; };
 		5CE608FC254299570061F10E /* README.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5CE608FB254299570061F10E /* README.pdf */; };
 		5CE90EC42540D0C0008E1A9C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE90EC32540D0C0008E1A9C /* SignUpViewController.swift */; };
@@ -42,13 +42,13 @@
 		019ADFFD253602740072E2E0 /* Sync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		019AE000253602740072E2E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		019AE002253602740072E2E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		019AE005253602740072E2E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		019AE008253602740072E2E0 /* Sync.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sync.xcdatamodel; sourceTree = "<group>"; };
 		019AE00A253602740072E2E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		019AE00D253602740072E2E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		019AE00F253602740072E2E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01E092EA253E0EF200C86A29 /* NotificationHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHubViewController.swift; sourceTree = "<group>"; };
 		0C074A54E7FBD278C1FE14EB /* Pods_Sync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		141ADAD8257F376A00D299DE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1AC9D1DE17AA6FCD2AD8EB01 /* Pods-Sync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync.release.xcconfig"; path = "Target Support Files/Pods-Sync/Pods-Sync.release.xcconfig"; sourceTree = "<group>"; };
 		5C0035F02551F7F800B1F5DB /* ResetPasswordLoggedInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordLoggedInViewController.swift; sourceTree = "<group>"; };
 		5CE608FB254299570061F10E /* README.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = README.pdf; sourceTree = "<group>"; };
@@ -101,8 +101,8 @@
 				5CE90EC32540D0C0008E1A9C /* SignUpViewController.swift */,
 				A0245C33254143140031E0DD /* SignInViewController.swift */,
 				019AE002253602740072E2E0 /* ViewController.swift */,
-				019AE004253602740072E2E0 /* Main.storyboard */,
 				5C0035F02551F7F800B1F5DB /* ResetPasswordLoggedInViewController.swift */,
+				141ADAD8257F376A00D299DE /* Main.storyboard */,
 				A3FF5D372542337F0079BC1A /* MenuTransition.swift */,
 				A3FF5D3425422E3B0079BC1A /* SettingsViewController.swift */,
 				5CE90ECA2541085D008E1A9C /* OptInViewController.swift */,
@@ -206,9 +206,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				019AE00E253602740072E2E0 /* LaunchScreen.storyboard in Resources */,
+				141ADAD9257F376A00D299DE /* Main.storyboard in Resources */,
 				5CE90EE625411E80008E1A9C /* GoogleService-Info.plist in Resources */,
 				019AE00B253602740072E2E0 /* Assets.xcassets in Resources */,
-				019AE006253602740072E2E0 /* Main.storyboard in Resources */,
 				5CE608FC254299570061F10E /* README.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,14 +343,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		019AE004253602740072E2E0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				019AE005253602740072E2E0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		019AE00C253602740072E2E0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

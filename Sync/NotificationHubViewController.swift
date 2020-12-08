@@ -61,8 +61,8 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
         deleteAllRecords()
         getTwitterNotifications()
         sections = [Category(name: "Twitter", items: twitterNotifications), Category(name: "Instagram", items: instagramNotifications), Category(name: "LinkedIn", items: linkedInNotifications), Category(name: "Facebook", items: facebookNotifications)]
-        notificationHubTable.backgroundColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
-        self.view.backgroundColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
+        notificationHubTable.backgroundColor = UIColor(named: "Background")
+        self.view.backgroundColor = UIColor(named: "Background")
         
         definesPresentationContext = true
     }
@@ -99,7 +99,7 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell") as! SocialMediaTableViewCell
-        cell.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
+        cell.backgroundColor = UIColor(named: "blueButton")
         switch sections[indexPath.section].name {
         case "Twitter":
             if(TWTRTwitter.sharedInstance().sessionStore.session() != nil && twitterNotifications.count != 0 ){
@@ -294,9 +294,9 @@ class NotificationHubViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        view.tintColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
+        //view.tintColor = UIColor(hue: 0.6167, saturation: 0.17, brightness: 0.44, alpha: 1.0)
         let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.textColor = UIColor(hue: 0.125, saturation: 0.11, brightness: 0.98, alpha: 1.0)
+        //header.textLabel?.textColor = UIColor(hue: 0.125, saturation: 0.11, brightness: 0.98, alpha: 1.0)
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {

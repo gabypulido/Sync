@@ -13,7 +13,7 @@ class MessengerChannelViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        messengerNotificationTable.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
+        messengerNotificationTable.backgroundColor = UIColor(named: "blueButton")
         // Do any additional setup after loading the view.
     }
     

@@ -34,7 +34,7 @@ class TwitterChannelViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        twitterNotificationTable.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
+        twitterNotificationTable.backgroundColor = UIColor(named: "blueButton")
         
         let mainVC = NotificationHubViewController()
         self.fullNotifications = mainVC.retrieveNotifications()
@@ -46,7 +46,7 @@ class TwitterChannelViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! TwitterTableViewCell
-        cell.backgroundColor = UIColor(hue: 0.5222, saturation: 0.22, brightness: 0.87, alpha: 1.0)
+        cell.backgroundColor = UIColor(named: "blueButton")
         let row = indexPath.row
         let currNotification = filterNotifications()[row]
         
