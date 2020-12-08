@@ -21,7 +21,7 @@
 		01E092EB253E0EF300C86A29 /* NotificationHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E092EA253E0EF200C86A29 /* NotificationHubViewController.swift */; };
 		141ADAD9257F376A00D299DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141ADAD8257F376A00D299DE /* Main.storyboard */; };
 		5C0035F12551F7F800B1F5DB /* ResetPasswordLoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0035F02551F7F800B1F5DB /* ResetPasswordLoggedInViewController.swift */; };
-		5CE608FC254299570061F10E /* README.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5CE608FB254299570061F10E /* README.pdf */; };
+		5CC49255257F3E5400291992 /* readme.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5CC49254257F3E5400291992 /* readme.pdf */; };
 		5CE90EC42540D0C0008E1A9C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE90EC32540D0C0008E1A9C /* SignUpViewController.swift */; };
 		5CE90ECB2541085D008E1A9C /* OptInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE90ECA2541085D008E1A9C /* OptInViewController.swift */; };
 		5CE90EE625411E80008E1A9C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CE90EE525411E80008E1A9C /* GoogleService-Info.plist */; };
@@ -51,7 +51,7 @@
 		141ADAD8257F376A00D299DE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1AC9D1DE17AA6FCD2AD8EB01 /* Pods-Sync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync.release.xcconfig"; path = "Target Support Files/Pods-Sync/Pods-Sync.release.xcconfig"; sourceTree = "<group>"; };
 		5C0035F02551F7F800B1F5DB /* ResetPasswordLoggedInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordLoggedInViewController.swift; sourceTree = "<group>"; };
-		5CE608FB254299570061F10E /* README.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = README.pdf; sourceTree = "<group>"; };
+		5CC49254257F3E5400291992 /* readme.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = readme.pdf; sourceTree = "<group>"; };
 		5CE90EC32540D0C0008E1A9C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5CE90ECA2541085D008E1A9C /* OptInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptInViewController.swift; sourceTree = "<group>"; };
 		5CE90EE525411E80008E1A9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -97,12 +97,12 @@
 			isa = PBXGroup;
 			children = (
 				019AE000253602740072E2E0 /* AppDelegate.swift */,
-				5CE608FB254299570061F10E /* README.pdf */,
 				5CE90EC32540D0C0008E1A9C /* SignUpViewController.swift */,
 				A0245C33254143140031E0DD /* SignInViewController.swift */,
 				019AE002253602740072E2E0 /* ViewController.swift */,
 				5C0035F02551F7F800B1F5DB /* ResetPasswordLoggedInViewController.swift */,
 				141ADAD8257F376A00D299DE /* Main.storyboard */,
+				5CC49254257F3E5400291992 /* readme.pdf */,
 				A3FF5D372542337F0079BC1A /* MenuTransition.swift */,
 				A3FF5D3425422E3B0079BC1A /* SettingsViewController.swift */,
 				5CE90ECA2541085D008E1A9C /* OptInViewController.swift */,
@@ -205,11 +205,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CC49255257F3E5400291992 /* readme.pdf in Resources */,
 				019AE00E253602740072E2E0 /* LaunchScreen.storyboard in Resources */,
 				141ADAD9257F376A00D299DE /* Main.storyboard in Resources */,
 				5CE90EE625411E80008E1A9C /* GoogleService-Info.plist in Resources */,
 				019AE00B253602740072E2E0 /* Assets.xcassets in Resources */,
-				5CE608FC254299570061F10E /* README.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
